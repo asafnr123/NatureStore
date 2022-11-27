@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureStore.Model", "NatureStore.Model\NatureStore.Model.csproj", "{374ABB2C-2F3B-4646-8EDF-794C96C155FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatureStore.Model", "NatureStore.Model\NatureStore.Model.csproj", "{374ABB2C-2F3B-4646-8EDF-794C96C155FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureStore.Controller", "NatureStore.Controller\NatureStore.Controller.csproj", "{8C6A195F-5D72-4E34-8111-5D0FAAA2C935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NatureStore.Controller", "NatureStore.Controller\NatureStore.Controller.csproj", "{8C6A195F-5D72-4E34-8111-5D0FAAA2C935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatureStore.View", "NatureStore.View\NatureStore.View.csproj", "{A05B3FA4-7034-46D7-94B9-CB616D160D07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8C6A195F-5D72-4E34-8111-5D0FAAA2C935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C6A195F-5D72-4E34-8111-5D0FAAA2C935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C6A195F-5D72-4E34-8111-5D0FAAA2C935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05B3FA4-7034-46D7-94B9-CB616D160D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05B3FA4-7034-46D7-94B9-CB616D160D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05B3FA4-7034-46D7-94B9-CB616D160D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05B3FA4-7034-46D7-94B9-CB616D160D07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
