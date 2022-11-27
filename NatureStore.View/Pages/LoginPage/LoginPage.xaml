@@ -11,14 +11,14 @@
     <Grid>
         <Border CornerRadius="7" BorderBrush="Black" Background="Gray" Width="400" Height="250" BorderThickness="2">
             <WrapPanel Width="300" Height="250" VerticalAlignment="Center">
-                <Label Content="Email:" Style="{StaticResource labels}" Margin="20,30,0,0" />
-                <TextBox x:Name="EmailTxt" Style="{StaticResource userInput}" Margin="-35,70,0,0" />
+                <Label Content="Username:" Style="{StaticResource labels}" Margin="20,30,0,0" />
+                <TextBox Name="usernameTxt" Style="{StaticResource userInput}" Margin="-65,70,0,0" />
 
                 <Label Content="Password:" Style="{StaticResource labels}" Margin="20,10,0,0"  />
-                <PasswordBox x:Name="PassTxt" Style="{StaticResource passInput}" Margin="-60,50,0,0" />
+                <PasswordBox Name="PassTxt" Style="{StaticResource passInput}" Margin="-60,50,0,0" />
 
-                <Button Content="Login" Style="{StaticResource loginBtn}" Margin="20,30,0,0" />
-                <Button Content="Register" Style="{StaticResource regularBtn}" Margin="10,30,0,0" Name="registerBtn"/>
+                <Button Name="LoginBtn" Content="Login" Style="{StaticResource loginBtn}" Margin="20,30,0,0" Click="LoginBtn_Click" />
+                <Button Name="RegisterBtn" Content="Register" Style="{StaticResource regularBtn}" Margin="10,30,0,0"/>
 
             </WrapPanel>
         </Border>

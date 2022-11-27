@@ -11,4 +11,8 @@
     <Folder Include="UserControls\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NatureStore.Controller\NatureStore.Controller.csproj" />
+  </ItemGroup>
+
 </Project>

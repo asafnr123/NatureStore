@@ -13,7 +13,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Content="The Nature Store" />
+        <Label Content="The Nature Store" Style="{StaticResource header}"/>
         <Frame Grid.Row="1" x:Name="MainFrame" Source="/Pages/LoginPage/LoginPage.xaml" />
 
 

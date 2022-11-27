@@ -9,9 +9,11 @@ namespace NatureStore.Controller
 {
     public class DbConnector
     {
-        private readonly NatureStoreDbContext db;
+        private static readonly NatureStoreDbContext db = new NatureStoreDbContext();
         private static DbConnector instance = null;
         private static readonly object key = new object();
+
+        private DbConnector() { }
 
         public static DbConnector GetInstance()
         {

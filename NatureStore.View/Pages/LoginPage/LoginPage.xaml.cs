@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NatureStore.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,20 @@ namespace NatureStore.View.Pages.LoginPage
             
         }
 
-        
+        private DbReader reader = new();
+        private string username;
+        private string password;
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.username = usernameTxt.Text;
+            this.password = PassTxt.Password;
+
+            if(reader.CheckIfUserExistInDb(username, password))
+                MessageBox.Show("Welcome");
+            else
+                MessageBox.Show("Username Or Password Are Incorrect");
+
+        }
     }
 }
