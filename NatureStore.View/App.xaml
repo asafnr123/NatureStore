@@ -47,8 +47,14 @@
             <Setter Property="FontSize" Value="17" />
             <Setter Property="FontFamily" Value="Berlin Sans FB" />
         </Style>
-        
-        
-        
+
+        <Style x:Key="border" TargetType="Border">
+            <Setter Property="CornerRadius" Value="7"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+
     </Application.Resources>
 </Application>

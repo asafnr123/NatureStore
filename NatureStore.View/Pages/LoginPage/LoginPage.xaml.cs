@@ -35,12 +35,15 @@ namespace NatureStore.View.Pages.LoginPage
         {
             this.username = usernameTxt.Text;
             this.password = PassTxt.Password;
-
             if(reader.CheckIfUserExistInDb(username, password))
                 MessageBox.Show("Welcome");
             else
                 MessageBox.Show("Username Or Password Are Incorrect");
+        }
 
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegisterPage());
         }
     }
 }

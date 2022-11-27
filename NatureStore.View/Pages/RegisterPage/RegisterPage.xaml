@@ -8,7 +8,27 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegisterPage">
 
-    <Grid Background="Pink">
-        <TextBlock FontSize="24" Text="Register" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid>
+        <Border Style="{StaticResource border}" Width="400" Height="350">
+            <WrapPanel Width="350" Height="350" VerticalAlignment="Center">
+                <Label Content="Username:" Style="{StaticResource labels}" Margin="20,20,0,0" />
+                <TextBox Name="username" Style="{StaticResource userInput}" Margin="5,20,0,0"/>
+
+                <Label Content="Password:" Style="{StaticResource labels}" Margin="20,20,0,0" />
+                <TextBox Name="password" Style="{StaticResource userInput}" Margin="10,20,0,0"/>
+
+                <Label Content="Country:" Style="{StaticResource labels}" Margin="20,20,0,0" />
+                <TextBox Name="country" Style="{StaticResource userInput}" Margin="20,20,0,0"/>
+
+                <Label Content="City:" Style="{StaticResource labels}" Margin="20,20,0,0" />
+                <TextBox Name="city" Style="{StaticResource userInput}" Margin="50,20,0,0"/>
+
+                <Label Content="Address:" Style="{StaticResource labels}" Margin="20,20,0,0" />
+                <TextBox Name="address" Style="{StaticResource userInput}" Margin="24,20,0,0"/>
+
+                <Button Content="Submit" Style="{StaticResource loginBtn}" Margin="40,35,0,0" />
+                <Button Content="Clear" Style="{StaticResource regularBtn}" Margin="40,35,0,0" />
+            </WrapPanel>
+        </Border>
     </Grid>
 </Page>
