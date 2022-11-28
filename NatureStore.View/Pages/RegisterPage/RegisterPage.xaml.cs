@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NatureStore.Controller;
+using NatureStore.Controller.Enums;
+using NatureStore.Model.Entitys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,32 +26,58 @@ namespace NatureStore.View.Pages.LoginPage
         public RegisterPage()
         {
             InitializeComponent();
-        }
-
-        private string Username { get; set; }
-        private string Password { get; set; }
-        public string Address { get; set; }
-        private string City { get; set; }
-        private string Country { get; set; }    
-
-
-        public void AssaignPropsToUserInfo()
-        {
-            this.Username = username.Text;
-            this.Password = password.Password;
-            this.Address = address.Text;
-            this.City = city.Text;
-            this.Country = country.Text;
-        }
-
-
-        private void ClearBtn_Click(object sender, RoutedEventArgs e)
-        { 
             this.username.Text = "";
             this.password.Password = "";
             this.address.Text = "";
             this.city.Text = "";
             this.country.Text = "";
+        }
+
+
+
+        private RegisterPageController pageController = new();
+
+
+
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.username.Text = "";
+            this.password.Password = "";
+            this.address.Text = "";
+            this.city.Text = "";
+            this.country.Text = "";
+        }
+
+        private void SubmititBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (pageController.ValidateUsername(username.Text) == FormStatus.LengthToShort)
+                MessageBox.Show("Username Is Too Short");
+
+            else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthToShort)
+                MessageBox.Show("Password Is Too Short");
+
+            else if (pageController.ValidateCountry(country.Text) == FormStatus.LengthToShort)
+                MessageBox.Show("Country Is Invalid");
+
+            else if (pageController.ValidateCitry(city.Text) == FormStatus.LengthToShort)
+                MessageBox.Show("Citry Is Invalid");
+
+            else if (pageController.ValidateAddress(address.Text) == FormStatus.LengthToShort)
+                MessageBox.Show("Address Is Invalid");
+
+            else
+            { 
+                //User user = new User(username.Text, password.Password, address.Text, city.Text, country.Text);
+                //pageController.AddUserToDb(user);
+                MessageBox.Show("Successfully Registered"); 
+            }
+            
+
+
+
+
         }
     }
 }

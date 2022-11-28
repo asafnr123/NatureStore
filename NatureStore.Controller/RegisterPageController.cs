@@ -1,5 +1,6 @@
 ﻿using NatureStore.Controller.Enums;
 using NatureStore.Controller.Interfaces;
+using NatureStore.Model.Context;
 using NatureStore.Model.Entitys;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,13 @@ namespace NatureStore.Controller
 {
     public class RegisterPageController : IRegisterController
     {
+        private readonly NatureStoreDbContext db = DbConnector.GetInstance().GetDb();
         public bool AddUserToDb(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FormStatus CheckIfUserTaken(string username)
         {
             throw new NotImplementedException();
         }

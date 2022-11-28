@@ -9,6 +9,7 @@ namespace NatureStore.Controller.Enums
     public enum FormStatus
     {
         LengthToShort,
+        UsernameTaken,
         Valid
     }
 }

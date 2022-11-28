@@ -15,5 +15,19 @@ namespace NatureStore.Model.Entitys
         public string City { get; set; }
         public string Country { get; set; }
         public UserType UserType { get; set; }
+
+
+        public User(string userName, string password, string address, string city, string country)
+        {
+            UserName = userName;
+            Password = password;
+            Address = address;
+            City = city;
+            Country = country;
+            UserType = UserType.User;
+        }
     }
+
+
+
 }
