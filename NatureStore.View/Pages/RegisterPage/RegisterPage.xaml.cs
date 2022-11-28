@@ -49,7 +49,6 @@ namespace NatureStore.View.Pages.LoginPage
             this.address.Text = "";
             this.city.Text = "";
             this.country.Text = "";
-
         }
     }
 }
