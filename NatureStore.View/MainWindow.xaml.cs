@@ -24,8 +24,8 @@ namespace NatureStore.View
         public MainWindow()
         {
             InitializeComponent();
-            
         }
+
 
     }
 }

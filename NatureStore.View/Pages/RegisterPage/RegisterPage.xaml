@@ -15,7 +15,7 @@
                 <TextBox Name="username" Style="{StaticResource userInput}" Margin="5,20,0,0"/>
 
                 <Label Content="Password:" Style="{StaticResource labels}" Margin="20,20,0,0" />
-                <TextBox Name="password" Style="{StaticResource userInput}" Margin="10,20,0,0"/>
+                <PasswordBox Name="password" Style="{StaticResource passInput}" Margin="10,20,0,0"/>
 
                 <Label Content="Country:" Style="{StaticResource labels}" Margin="20,20,0,0" />
                 <TextBox Name="country" Style="{StaticResource userInput}" Margin="20,20,0,0"/>
@@ -27,7 +27,7 @@
                 <TextBox Name="address" Style="{StaticResource userInput}" Margin="24,20,0,0"/>
 
                 <Button Content="Submit" Style="{StaticResource loginBtn}" Margin="40,35,0,0" />
-                <Button Content="Clear" Style="{StaticResource regularBtn}" Margin="40,35,0,0" />
+                <Button Content="Clear" Style="{StaticResource regularBtn}" Margin="40,35,0,0" Click="ClearBtn_Click" />
             </WrapPanel>
         </Border>
     </Grid>
