@@ -8,7 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UserHomePage">
 
-    <Grid>
-        
+    <Grid Background="white">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
     </Grid>
 </Page>

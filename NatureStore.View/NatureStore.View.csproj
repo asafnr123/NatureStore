@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UserControls\" />
+    <Compile Remove="UserControls\**" />
+    <EmbeddedResource Remove="UserControls\**" />
+    <None Remove="UserControls\**" />
+    <Page Remove="UserControls\**" />
   </ItemGroup>
 
   <ItemGroup>
