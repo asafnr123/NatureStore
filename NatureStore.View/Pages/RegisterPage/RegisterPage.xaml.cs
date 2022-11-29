@@ -55,6 +55,12 @@ namespace NatureStore.View.Pages.LoginPage
             if (pageController.ValidateUsername(username.Text) == FormStatus.LengthToShort)
                 MessageBox.Show("Username Is Too Short");
 
+            if (pageController.ValidateUsername(username.Text) == FormStatus.UsernameInvalid)
+                MessageBox.Show("Username Is Invalid");
+
+            if (pageController.CheckIfUserTaken(username.Text) == FormStatus.UsernameTaken)
+                MessageBox.Show("Username Is Taken");
+
             else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthToShort)
                 MessageBox.Show("Password Is Too Short");
 

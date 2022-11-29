@@ -8,6 +8,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NatureStore.Controller
@@ -60,8 +61,12 @@ namespace NatureStore.Controller
 
         public FormStatus ValidateUsername(string username)
         {
+            var regex = new Regex("[a-zA-Z]");
             if (username.Length < 4)
                 return FormStatus.LengthToShort;
+
+            else if (regex.IsMatch(username))
+                return FormStatus.UsernameInvalid;
             else
                 return FormStatus.Valid;
         }

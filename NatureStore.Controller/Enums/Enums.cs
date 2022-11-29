@@ -10,6 +10,7 @@ namespace NatureStore.Controller.Enums
     {
         LengthToShort,
         UsernameTaken,
+        UsernameInvalid,
         Valid
     }
 }
