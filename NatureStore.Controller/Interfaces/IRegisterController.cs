@@ -17,7 +17,7 @@ namespace NatureStore.Controller.Interfaces
         public FormStatus ValidateCitry(string city);
         public FormStatus CheckIfUserTaken(string username);
 
-        public bool AddUserToDb(User user);
+        public void AddUserToDb(User user);
         
     }
 }

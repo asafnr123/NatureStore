@@ -1,4 +1,5 @@
-﻿using NatureStore.Controller.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using NatureStore.Controller.Enums;
 using NatureStore.Controller.Interfaces;
 using NatureStore.Model.Context;
 using NatureStore.Model.Entitys;
@@ -16,14 +17,20 @@ namespace NatureStore.Controller
     public class RegisterPageController : IRegisterController
     {
         private readonly NatureStoreDbContext db = DbConnector.GetInstance().GetDb();
-        public bool AddUserToDb(User user)
+        public void AddUserToDb(User user)
         {
-            throw new NotImplementedException();
+            db.Users.Add(user);
+            db.SaveChanges();
         }
 
         public FormStatus CheckIfUserTaken(string username)
         {
-            throw new NotImplementedException();
+            var user = db.Users.FirstOrDefault(u => u.UserName == username);
+
+            if(user == null)
+                return FormStatus.Valid;
+            else
+                return FormStatus.UsernameTaken;
         }
 
         public FormStatus ValidateAddress(string address)

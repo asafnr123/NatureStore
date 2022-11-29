@@ -26,7 +26,7 @@
                 <Label Content="Address:" Style="{StaticResource labels}" Margin="20,20,0,0" />
                 <TextBox Name="address" Style="{StaticResource userInput}" Margin="24,20,0,0"/>
 
-                <Button Name="SubmitBtn" Content="Submit" Style="{StaticResource loginBtn}" Margin="40,35,0,0" Click="SubmititBtn_Click" />
+                <Button Name="SubmitBtn" IsDefault="True" Content="Submit" Style="{StaticResource loginBtn}" Margin="40,35,0,0" Click="SubmititBtn_Click" />
                 <Button Name="ClearBtn" Content="Clear" Style="{StaticResource regularBtn}" Margin="40,35,0,0" Click="ClearBtn_Click" />
             </WrapPanel>
         </Border>

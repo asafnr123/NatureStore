@@ -17,7 +17,7 @@
                 <Label Content="Password:" Style="{StaticResource labels}" Margin="20,10,0,0"  />
                 <PasswordBox Name="PassTxt" Style="{StaticResource passInput}" Margin="-60,50,0,0" />
 
-                <Button Name="LoginBtn" Content="Login" Style="{StaticResource loginBtn}" Margin="20,30,0,0" Click="LoginBtn_Click" />
+                <Button Name="LoginBtn" IsDefault="True" Content="Login" Style="{StaticResource loginBtn}" Margin="20,30,0,0" Click="LoginBtn_Click"  />
                 <Button Name="RegisterBtn" Content="Register" Style="{StaticResource regularBtn}" Margin="10,30,0,0" Click="RegisterBtn_Click"/>
 
             </WrapPanel>

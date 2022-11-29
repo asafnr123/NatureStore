@@ -58,8 +58,8 @@ namespace NatureStore.View.Pages.LoginPage
             else if (pageController.ValidateUsername(username.Text) == FormStatus.UsernameInvalid)
                 MessageBox.Show("Username Is Invalid");
 
-            //else if (pageController.CheckIfUserTaken(username.Text) == FormStatus.UsernameTaken)
-            //    MessageBox.Show("Username Is Taken");
+            else if (pageController.CheckIfUserTaken(username.Text) == FormStatus.UsernameTaken)
+                MessageBox.Show("Username Is Taken");
 
             else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthTooShort)
                 MessageBox.Show("Password Is Too Short");
@@ -74,9 +74,9 @@ namespace NatureStore.View.Pages.LoginPage
                 MessageBox.Show("Address Is Invalid");
 
             else
-            { 
-                //User user = new User(username.Text, password.Password, address.Text, city.Text, country.Text);
-                //pageController.AddUserToDb(user);
+            {
+                User user = new User(username.Text, password.Password, address.Text, city.Text, country.Text);
+                pageController.AddUserToDb(user);
                 MessageBox.Show("Successfully Registered"); 
             }
             
