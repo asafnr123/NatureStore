@@ -36,7 +36,11 @@ namespace NatureStore.View.Pages.LoginPage
             this.username = usernameTxt.Text;
             this.password = PassTxt.Password;
             if(reader.CheckIfUserExistInDb(username, password))
-                MessageBox.Show("Welcome");
+            {
+                // return only true if user is admin
+                if (reader.CheckUserType(username))
+                    Console.WriteLine();
+            }
             else
                 MessageBox.Show("Username Or Password Are Incorrect");
         }

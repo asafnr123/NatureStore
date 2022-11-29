@@ -35,7 +35,7 @@ namespace NatureStore.View.Pages.LoginPage
 
 
 
-        private RegisterPageController pageController = new();
+        private FormController pageController = new();
 
 
 

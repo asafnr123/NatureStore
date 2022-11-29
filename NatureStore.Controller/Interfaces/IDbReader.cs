@@ -16,6 +16,7 @@ namespace NatureStore.Controller.Interfaces
         List<Stock> GetAllStocks();
         List<Category> GetAllCategorys();
         bool CheckIfUserExistInDb(string username, string password);
+        bool CheckUserType(string username);
 
 
     }

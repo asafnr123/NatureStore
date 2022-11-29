@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NatureStore.Controller.Enums;
 using NatureStore.Controller.Interfaces;
+using NatureStore.Model;
 using NatureStore.Model.Context;
 using NatureStore.Model.Entitys;
 using System;
@@ -14,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace NatureStore.Controller
 {
-    public class RegisterPageController : IRegisterController
+    public class FormController : IFormController
     {
         private readonly NatureStoreDbContext db = DbConnector.GetInstance().GetDb();
         public void AddUserToDb(User user)

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NatureStore.Controller.Interfaces
 {
-    public interface IRegisterController
+    public interface IFormController
     {
         public FormStatus ValidateUsername(string username);
         public FormStatus ValidatePassword(string password);

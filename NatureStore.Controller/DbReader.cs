@@ -1,4 +1,5 @@
 ﻿using NatureStore.Controller.Interfaces;
+using NatureStore.Model;
 using NatureStore.Model.Context;
 using NatureStore.Model.Entities;
 using NatureStore.Model.Entitys;
@@ -18,6 +19,22 @@ namespace NatureStore.Controller
         public DbReader()
         {
             this.db = DbConnector.GetInstance().GetDb();
+        }
+
+        // return true if user is admin, return false if regular user or null
+        public bool CheckUserType(string username)
+        {
+            var user = db.Users.FirstOrDefault(u => u.UserName == username);
+
+            if (user != null)
+            {
+                if (user.UserType == UserType.Admin)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
         }
 
 
