@@ -45,5 +45,11 @@ namespace NatureStore.View.Pages.LoginPage
         {
             this.NavigationService.Navigate(new RegisterPage());
         }
+
+        // return true if user is admin 
+        private bool CheckUserType(string username, string password)
+        {
+            return false;
+        }
     }
 }

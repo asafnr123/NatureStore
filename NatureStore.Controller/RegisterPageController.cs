@@ -29,7 +29,7 @@ namespace NatureStore.Controller
         public FormStatus ValidateAddress(string address)
         {
             if (address.Length < 2)
-                return FormStatus.LengthToShort;
+                return FormStatus.LengthTooShort;
             else
                 return FormStatus.Valid;
         }
@@ -37,7 +37,7 @@ namespace NatureStore.Controller
         public FormStatus ValidateCitry(string city)
         {
             if (city.Length < 3)
-                return FormStatus.LengthToShort;
+                return FormStatus.LengthTooShort;
             else
                 return FormStatus.Valid;
         }
@@ -45,7 +45,7 @@ namespace NatureStore.Controller
         public FormStatus ValidateCountry(string country)
         {
             if (country.Length < 3)
-                return FormStatus.LengthToShort;
+                return FormStatus.LengthTooShort;
             else
                 return FormStatus.Valid;
         }
@@ -53,7 +53,7 @@ namespace NatureStore.Controller
         public FormStatus ValidatePassword(string password)
         {
             if (password.Length < 6)
-                return FormStatus.LengthToShort;
+                return FormStatus.LengthTooShort;
             else
                 return FormStatus.Valid;
         }
@@ -61,10 +61,9 @@ namespace NatureStore.Controller
 
         public FormStatus ValidateUsername(string username)
         {
-            var regex = new Regex("[a-zA-Z]");
+            var regex = new Regex("[a-z][0,9]+");
             if (username.Length < 4)
-                return FormStatus.LengthToShort;
-
+                return FormStatus.LengthTooShort;
             else if (regex.IsMatch(username))
                 return FormStatus.UsernameInvalid;
             else

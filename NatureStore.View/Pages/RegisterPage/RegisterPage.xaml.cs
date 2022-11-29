@@ -52,25 +52,25 @@ namespace NatureStore.View.Pages.LoginPage
         private void SubmititBtn_Click(object sender, RoutedEventArgs e)
         {
             
-            if (pageController.ValidateUsername(username.Text) == FormStatus.LengthToShort)
+            if (pageController.ValidateUsername(username.Text) == FormStatus.LengthTooShort)
                 MessageBox.Show("Username Is Too Short");
 
-            if (pageController.ValidateUsername(username.Text) == FormStatus.UsernameInvalid)
+            else if (pageController.ValidateUsername(username.Text) == FormStatus.UsernameInvalid)
                 MessageBox.Show("Username Is Invalid");
 
-            if (pageController.CheckIfUserTaken(username.Text) == FormStatus.UsernameTaken)
-                MessageBox.Show("Username Is Taken");
+            //else if (pageController.CheckIfUserTaken(username.Text) == FormStatus.UsernameTaken)
+            //    MessageBox.Show("Username Is Taken");
 
-            else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthToShort)
+            else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthTooShort)
                 MessageBox.Show("Password Is Too Short");
 
-            else if (pageController.ValidateCountry(country.Text) == FormStatus.LengthToShort)
+            else if (pageController.ValidateCountry(country.Text) == FormStatus.LengthTooShort)
                 MessageBox.Show("Country Is Invalid");
 
-            else if (pageController.ValidateCitry(city.Text) == FormStatus.LengthToShort)
+            else if (pageController.ValidateCitry(city.Text) == FormStatus.LengthTooShort)
                 MessageBox.Show("Citry Is Invalid");
 
-            else if (pageController.ValidateAddress(address.Text) == FormStatus.LengthToShort)
+            else if (pageController.ValidateAddress(address.Text) == FormStatus.LengthTooShort)
                 MessageBox.Show("Address Is Invalid");
 
             else
