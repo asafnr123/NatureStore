@@ -18,9 +18,9 @@ namespace NatureStore.View.Pages.UserHomePage
     /// <summary>
     /// Interaction logic for UserHomePage.xaml
     /// </summary>
-    public partial class UserHomePage : Page
+    public partial class UserPage : Page
     {
-        public UserHomePage()
+        public UserPage()
         {
             InitializeComponent();
         }

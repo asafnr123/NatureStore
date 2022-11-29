@@ -22,7 +22,7 @@ namespace NatureStore.Controller
         }
 
         // return true if user is admin, return false if regular user or null
-        public bool CheckUserType(string username)
+        public bool CheckUserTypeByUsername(string username)
         {
             var user = db.Users.FirstOrDefault(u => u.UserName == username);
 

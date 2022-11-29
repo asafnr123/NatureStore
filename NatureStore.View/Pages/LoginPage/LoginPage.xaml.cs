@@ -1,18 +1,9 @@
 ﻿using NatureStore.Controller;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NatureStore.View.Pages.AdminHomePage;
+using NatureStore.View.Pages.UserHomePage;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace NatureStore.View.Pages.LoginPage
 {
@@ -38,8 +29,10 @@ namespace NatureStore.View.Pages.LoginPage
             if(reader.CheckIfUserExistInDb(username, password))
             {
                 // return only true if user is admin
-                if (reader.CheckUserType(username))
-                    Console.WriteLine();
+                if (reader.CheckUserTypeByUsername(username))
+                    this.NavigationService.Navigate(new AdminPage());
+                else
+                    this.NavigationService.Navigate(new UserPage());
             }
             else
                 MessageBox.Show("Username Or Password Are Incorrect");
