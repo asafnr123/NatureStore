@@ -28,7 +28,7 @@ namespace NatureStore.View.Pages.LoginPage
             this.password = PassTxt.Password;
             if(reader.CheckIfUserExistInDb(username, password))
             {
-                // return only true if user is admin
+                // return true if user is admin
                 if (reader.CheckUserTypeByUsername(username))
                     this.NavigationService.Navigate(new AdminPage());
                 else

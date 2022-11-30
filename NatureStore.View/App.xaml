@@ -4,13 +4,27 @@
              xmlns:local="clr-namespace:NatureStore.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+
         <Style x:Key="loginBtn" TargetType="Button">
             <Setter Property="Width" Value="120" />
             <Setter Property="Height" Value="30" />
-            <Setter Property="Background" Value="#2a84f1" />
+            <Setter Property="Background" Value="#FFACDFFF" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2a84f1"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="header" TargetType="Label">
@@ -51,10 +65,33 @@
         <Style x:Key="border" TargetType="Border">
             <Setter Property="CornerRadius" Value="7"/>
             <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Background" Value="#7b8792"/>
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
 
+        <Style x:Key="icon" TargetType="Path">
+            <Setter Property="Fill" Value="#FF72CFFF" />
+            <Setter Property="Stretch" Value="Fill" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Fill" Value="#2a84f1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="homePageOption" TargetType="Label" >
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Berlin Sans FB" />
+            <Setter Property="Background" Value="#FFBAEBFF" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Width" Value="100" />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2f91f1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
     </Application.Resources>
 </Application>

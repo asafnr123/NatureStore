@@ -18,4 +18,8 @@
     <ProjectReference Include="..\NatureStore.Controller\NatureStore.Controller.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CustomControls\" />
+  </ItemGroup>
+
 </Project>

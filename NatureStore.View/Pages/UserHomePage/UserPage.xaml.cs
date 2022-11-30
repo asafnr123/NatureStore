@@ -24,5 +24,6 @@ namespace NatureStore.View.Pages.UserHomePage
         {
             InitializeComponent();
         }
+
     }
 }

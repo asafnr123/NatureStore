@@ -3,17 +3,23 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:NatureStore.View.Pages.UserHomePage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UserHomePage">
 
     <Grid Background="white">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="User" FontSize="55" HorizontalAlignment="Center" />
+        <WrapPanel Grid.Row="0" VerticalAlignment="Top" >
+            <Path Width="40" Height="35" Margin="5" Data="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Style="{StaticResource icon}" />
+            <Label Content="Products" Style="{StaticResource homePageOption}" Padding="13,0,0,0" />
+            <Label Content="About" Style="{StaticResource homePageOption}" Padding="23,0,0,0" />
+            <Label Content="Contact" Style="{StaticResource homePageOption}" Padding="18,0,0,0" />
+
+            <Path Width="20" Height="20" Margin="350,0,0,0" Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Style="{StaticResource icon}" />
+        </WrapPanel>
     </Grid>
 </Page>
