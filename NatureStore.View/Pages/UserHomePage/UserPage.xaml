@@ -26,7 +26,7 @@
         <Frame Name="HomeFrame" Grid.Row="1" />
 
         <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-25,0,0" MouseLeave="ProducstWP_MouseLeave">
-            <uc:DropMenu x:Name="menu" ></uc:DropMenu>
+            <uc:DropMenu x:Name="productsMenu"></uc:DropMenu>
         </WrapPanel>
     </Grid>
 </Page>

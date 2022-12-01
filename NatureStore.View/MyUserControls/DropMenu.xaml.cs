@@ -28,12 +28,13 @@ namespace NatureStore.View.MyUserControls
         }
 
 
-        public UserPage Login { get; set; } = new UserPage();
+        public UserPage userPage { get; set; }
 
 
         private void protein_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Login.HomeFrame.Navigate(new ProteinPage());
+            userPage.HomeFrame.Navigate(new ProteinPage());
+            userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void snacks_MouseDown(object sender, MouseButtonEventArgs e)

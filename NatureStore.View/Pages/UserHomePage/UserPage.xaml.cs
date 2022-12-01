@@ -21,7 +21,7 @@ namespace NatureStore.View.Pages.UserHomePage
         public UserPage()
         {
             InitializeComponent();
-
+            this.productsMenu.userPage = this;
         }
 
 
