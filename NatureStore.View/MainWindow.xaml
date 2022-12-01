@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NatureStore.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     
@@ -14,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Label Content="The Nature Store" Style="{StaticResource header}"/>
-        <Frame Grid.Row="1" x:Name="MainFrame" Source="/Pages/LoginPage/LoginPage.xaml" />
+        <Frame Grid.Row="1" Name="MainFrame" Source="/Pages/Login/LoginPage.xaml" />
 
 
     </Grid>

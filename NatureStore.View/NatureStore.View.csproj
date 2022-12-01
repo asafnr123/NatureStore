@@ -8,18 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CustomControls\**" />
     <Compile Remove="UserControls\**" />
+    <EmbeddedResource Remove="CustomControls\**" />
     <EmbeddedResource Remove="UserControls\**" />
+    <None Remove="CustomControls\**" />
     <None Remove="UserControls\**" />
+    <Page Remove="CustomControls\**" />
     <Page Remove="UserControls\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NatureStore.Controller\NatureStore.Controller.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CustomControls\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using NatureStore.View.Pages.LoginPage;
+﻿using NatureStore.View.Pages.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;

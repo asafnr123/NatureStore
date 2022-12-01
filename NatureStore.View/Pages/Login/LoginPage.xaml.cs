@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace NatureStore.View.Pages.LoginPage
+namespace NatureStore.View.Pages.Login
 {
     /// <summary>
     /// Interaction logic for LoginPage.xaml
@@ -43,10 +43,5 @@ namespace NatureStore.View.Pages.LoginPage
             this.NavigationService.Navigate(new RegisterPage());
         }
 
-        // return true if user is admin 
-        private bool CheckUserType(string username, string password)
-        {
-            return false;
-        }
     }
 }

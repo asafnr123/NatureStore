@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NatureStore.View.Pages.LoginPage
+namespace NatureStore.View.Pages.Login
 {
     /// <summary>
     /// Interaction logic for RegisterPage.xaml

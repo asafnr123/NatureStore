@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NatureStore.View.User_Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,28 @@ using System.Windows.Shapes;
 
 namespace NatureStore.View.Pages.UserHomePage
 {
-    /// <summary>
-    /// Interaction logic for UserHomePage.xaml
-    /// </summary>
     public partial class UserPage : Page
     {
         public UserPage()
         {
             InitializeComponent();
+
+        }
+
+
+
+
+
+
+
+        private void Products_MouseEnter(object sender, RoutedEventArgs e)
+        {
+            ProducstWP.Children.Add(new DropMenu());
+        }
+
+        private void Products_MouseLeave(object sender, RoutedEventArgs e)
+        {
+            ProducstWP.Children.Clear();
         }
 
     }
