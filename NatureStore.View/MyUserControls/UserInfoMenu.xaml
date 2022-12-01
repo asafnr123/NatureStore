@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="NatureStore.View.MyUserControls.UserInfoMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NatureStore.View.MyUserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Profile" Grid.Row="0" Style="{StaticResource categoryLabel}" Padding="25,13,0,0" HorizontalAlignment="Right" />
+        <Label Content="My Orders" Grid.Row="1" Style="{StaticResource categoryLabel}" Padding="17,13,0,0" HorizontalAlignment="Right" />
+        <Label Content="Log Out" Grid.Row="2" Style="{StaticResource categoryLabel}" Padding="17,13,0,0" HorizontalAlignment="Right" />
+    </Grid>
+</UserControl>

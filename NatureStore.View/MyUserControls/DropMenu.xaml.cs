@@ -1,4 +1,4 @@
-﻿using NatureStore.View.Pages.ProteinProductsPage;
+﻿using NatureStore.View.Pages.ProductsDropMenu;
 using NatureStore.View.Pages.UserHomePage;
 using System;
 using System.Collections.Generic;
@@ -39,17 +39,20 @@ namespace NatureStore.View.MyUserControls
 
         private void snacks_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            userPage.HomeFrame.Navigate(new SnacksPage());
+            userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void vitamins_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            userPage.HomeFrame.Navigate(new VitaminsPage());
+            userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void creatine_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            userPage.HomeFrame.Navigate(new CreatinePage());
+            userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
     }
 }

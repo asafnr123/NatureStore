@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NatureStore.View.Pages.ProteinProductsPage
+namespace NatureStore.View.Pages.ProductsDropMenu
 {
     /// <summary>
-    /// Interaction logic for ProteinPage.xaml
+    /// Interaction logic for Creatine.xaml
     /// </summary>
-    public partial class ProteinPage : Page
+    public partial class CreatinePage : Page
     {
-        public ProteinPage()
+        public CreatinePage()
         {
             InitializeComponent();
         }

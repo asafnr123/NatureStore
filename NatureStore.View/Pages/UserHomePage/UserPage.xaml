@@ -20,13 +20,17 @@
             <Label Content="About" Style="{StaticResource homePageOption}" Padding="23,0,0,0" />
             <Label Content="Contact" Style="{StaticResource homePageOption}" Padding="18,0,0,0" />
 
-            <Path Width="20" Height="20" Margin="350,0,0,0" Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Style="{StaticResource icon}" />
+            <Path Width="20" Name="UserIcon" Height="20" MouseEnter="UserIcon_MouseEnter" Margin="350,0,0,0" Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Style="{StaticResource icon}" />
         </WrapPanel>
 
         <Frame Name="HomeFrame" Grid.Row="1" />
 
         <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-25,0,0" MouseLeave="ProducstWP_MouseLeave">
             <uc:DropMenu x:Name="productsMenu"></uc:DropMenu>
+        </WrapPanel>
+
+        <WrapPanel Name="UserWP" Grid.Row="1" Width="350" Height="200" HorizontalAlignment="Right" Visibility="Hidden" VerticalAlignment="Top"  MouseLeave="UserWP_MouseLeave">
+            <uc:UserInfoMenu Margin="250,0,0,0"/>
         </WrapPanel>
     </Grid>
 </Page>

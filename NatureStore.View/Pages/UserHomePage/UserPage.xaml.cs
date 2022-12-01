@@ -24,22 +24,33 @@ namespace NatureStore.View.Pages.UserHomePage
             this.productsMenu.userPage = this;
         }
 
-
-        
-        private void Products_MouseEnter(object sender, RoutedEventArgs e)
-        {
-                ProducstWP.Visibility = Visibility.Visible;
-        }
-        
-        private void ProducstWP_MouseLeave(object sender, MouseEventArgs e)
-        {
-            ProducstWP.Visibility = Visibility.Hidden;
-        }
         private void HouseIcon_Clicked(object sender, MouseEventArgs e)
         {
             this.NavigationService.Navigate(new UserPage());
         }
 
 
+
+        private void Products_MouseEnter(object sender, RoutedEventArgs e)
+        {
+            ProducstWP.Visibility = Visibility.Visible;
+        }
+        
+
+        private void ProducstWP_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ProducstWP.Visibility = Visibility.Hidden;
+        }
+
+
+        private void UserIcon_MouseEnter(object sender, MouseEventArgs e)
+        {
+            UserWP.Visibility = Visibility.Visible;
+        }
+
+        private void UserWP_MouseLeave(object sender, MouseEventArgs e)
+        {
+            UserWP.Visibility = Visibility.Hidden;
+        }
     }
 }
