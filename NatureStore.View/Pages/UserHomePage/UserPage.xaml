@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
 
         <WrapPanel Grid.Row="0" VerticalAlignment="Top" >
-            <Path Width="40" Height="35" Margin="5" Data="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Style="{StaticResource icon}" />
-            <Label Content="Products" Style="{StaticResource homePageOption}" Padding="13,0,0,0" MouseEnter="Products_MouseEnter" MouseLeave="Products_MouseLeave" />
+            <Path Name="HouseIcon" Width="40" Height="35" Margin="5" Data="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Style="{StaticResource icon}" MouseDown="HouseIcon_Clicked" />
+            <Label Content="Products" Style="{StaticResource homePageOption}" Padding="13,0,0,0" MouseEnter="Products_MouseEnter" />
             <Label Content="About" Style="{StaticResource homePageOption}" Padding="23,0,0,0" />
             <Label Content="Contact" Style="{StaticResource homePageOption}" Padding="18,0,0,0" />
 
@@ -25,8 +25,8 @@
 
         <Frame Name="HomeFrame" Grid.Row="1" />
 
-        <WrapPanel Name="ProducstWP" Width="100" Height="200" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,-25,0,0">
-            <uc:DropMenu></uc:DropMenu>
+        <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-25,0,0" MouseLeave="ProducstWP_MouseLeave">
+            <uc:DropMenu x:Name="menu" ></uc:DropMenu>
         </WrapPanel>
     </Grid>
 </Page>

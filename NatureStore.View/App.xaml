@@ -72,6 +72,7 @@
         <Style x:Key="icon" TargetType="Path">
             <Setter Property="Fill" Value="#FF72CFFF" />
             <Setter Property="Stretch" Value="Fill" />
+            <Setter Property="Cursor" Value="Hand" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Fill" Value="#2a84f1"/>
@@ -82,7 +83,8 @@
         <Style x:Key="homePageOption" TargetType="Label" >
             <Setter Property="FontSize" Value="20" />
             <Setter Property="FontFamily" Value="Berlin Sans FB" />
-            <Setter Property="Background" Value="#FFBAEBFF" />
+            <Setter Property="Background" Value="#FF85C2FB"/>
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Margin" Value="10" />
             <Setter Property="Width" Value="100" />
 
@@ -98,9 +100,23 @@
             <Setter Property="FontFamily" Value="Berlin Sans FB" />
             <Setter Property="Width" Value="100" />
             <Setter Property="Height" Value="50" />
-            <Setter Property="Background" Value="#2f91f1" />
+            <Setter Property="Background" Value="#FFBAEBFF"  />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFB0D9FF"/>
+                    <Setter Property="Visibility" Value="Visible" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
+        <Style x:Key="productsWpStyle" TargetType="WrapPanel">
+            <Setter Property="Visibility" Value="Hidden" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
     </Application.Resources>
 </Application>
 

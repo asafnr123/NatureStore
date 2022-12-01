@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NatureStore.View.Pages.ProteinProductsPage;
+using NatureStore.View.Pages.UserHomePage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,30 @@ namespace NatureStore.View.MyUserControls
         public DropMenu()
         {
             InitializeComponent();
-            this.DataContext = this;
+        }
+
+
+        public UserPage Login { get; set; } = new UserPage();
+
+
+        private void protein_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login.HomeFrame.Navigate(new ProteinPage());
+        }
+
+        private void snacks_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void vitamins_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void creatine_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
