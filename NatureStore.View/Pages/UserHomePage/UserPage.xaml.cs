@@ -1,4 +1,4 @@
-﻿using NatureStore.View.User_Controls;
+﻿using NatureStore.View.MyUserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace NatureStore.View.Pages.UserHomePage
 
         }
 
-
+        
 
 
 
@@ -32,12 +32,12 @@ namespace NatureStore.View.Pages.UserHomePage
 
         private void Products_MouseEnter(object sender, RoutedEventArgs e)
         {
-            ProducstWP.Children.Add(new DropMenu());
+            // ProducstWP.Children.Add(new DropMenu());
         }
 
         private void Products_MouseLeave(object sender, RoutedEventArgs e)
         {
-            ProducstWP.Children.Clear();
+            // ProducstWP.Children.Clear();
         }
 
     }
