@@ -5,17 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NatureStore.View.MyUserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="250" d:DesignWidth="300">
+             d:DesignHeight="150" d:DesignWidth="175">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <Label Content="Profile" Grid.Row="0" Style="{StaticResource categoryLabel}" Padding="25,13,0,0" HorizontalAlignment="Right" />
-        <Label Content="My Orders" Grid.Row="1" Style="{StaticResource categoryLabel}" Padding="17,13,0,0" HorizontalAlignment="Right" />
-        <Label Content="Log Out" Grid.Row="2" Style="{StaticResource categoryLabel}" Padding="17,13,0,0" HorizontalAlignment="Right" />
+
+        <Label Content="Profile" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="134,4,0,0" />
+        <Label Content="My Orders" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="112,4,0,0" Margin="0,25,0,0" />
+        <Label Content="Log Out" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="124,4,0,0" Margin="0,50,0,10" />
     </Grid>
 </UserControl>

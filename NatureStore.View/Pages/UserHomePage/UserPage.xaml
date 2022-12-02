@@ -29,8 +29,8 @@
             <uc:DropMenu x:Name="productsMenu"></uc:DropMenu>
         </WrapPanel>
 
-        <WrapPanel Name="UserWP" Grid.Row="1" Width="350" Height="200" HorizontalAlignment="Right" Visibility="Hidden" VerticalAlignment="Top"  MouseLeave="UserWP_MouseLeave">
-            <uc:UserInfoMenu Margin="250,0,0,0"/>
+        <WrapPanel Name="UserWP" Grid.Row="1" Style="{StaticResource userInfoWpStyle}" MouseLeave="UserWP_MouseLeave">
+            <uc:UserInfoMenu Margin="0,0,0,0"/>
         </WrapPanel>
     </Grid>
 </Page>

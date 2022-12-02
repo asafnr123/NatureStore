@@ -117,6 +117,33 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
+
+        <Style x:Key="userInfoLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Berlin Sans FB" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Background" Value="#FFBAEBFF"  />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFB0D9FF"/>
+                    <Setter Property="Visibility" Value="Visible" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <Style x:Key="userInfoWpStyle" TargetType="WrapPanel">
+            <Setter Property="Height" Value="85" />
+            <Setter Property="Width" Value="175" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Visibility" Value="Hidden" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,-15,0,0" />
+        </Style>
+
     </Application.Resources>
 </Application>
 
