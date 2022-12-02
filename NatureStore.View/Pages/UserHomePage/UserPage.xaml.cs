@@ -26,7 +26,7 @@ namespace NatureStore.View.Pages.UserHomePage
 
         private void HouseIcon_Clicked(object sender, MouseEventArgs e)
         {
-            this.NavigationService.Navigate(new UserPage());
+            this.NavigationService.Navigate(this);
         }
 
 
