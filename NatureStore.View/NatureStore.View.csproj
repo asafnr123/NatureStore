@@ -22,4 +22,8 @@
     <ProjectReference Include="..\NatureStore.Controller\NatureStore.Controller.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\ProductsDropMenu\Pictures\" />
+  </ItemGroup>
+
 </Project>

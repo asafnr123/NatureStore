@@ -9,8 +9,8 @@
       Title="ProteinPage">
     <Grid Background="#FF4387D6">
         <Label Style="{StaticResource header}" Content="Menu" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="125,0,0,0"/>
-        
-        <StackPanel Name="menu" Orientation="Vertical" Width="250" Height="325" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,45,0,0">
+
+        <StackPanel Background="#D9D9D9" Name="menu" Orientation="Vertical" Width="250" Height="325" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,45,0,0">
                 
 
          </StackPanel>
