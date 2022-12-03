@@ -90,5 +90,24 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             }
         }
 
+        private void quantityUp_Click(object sender, RoutedEventArgs e)
+        {
+            int quantity = int.Parse(this.quantityBtn.Content.ToString());
+            if(quantity < 10)
+            {
+            quantity++;
+            this.quantityBtn.Content = quantity.ToString();
+            }
+        }
+
+        private void quantityDown_Click(object sender, RoutedEventArgs e)
+        {
+            int quantity = int.Parse(this.quantityBtn.Content.ToString());
+            if(quantity > 1)
+            {
+            quantity--;
+            this.quantityBtn.Content = quantity.ToString();
+            }
+        }
     }
 }

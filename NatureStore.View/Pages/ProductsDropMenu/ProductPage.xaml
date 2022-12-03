@@ -20,12 +20,11 @@
         
         <WrapPanel Name="addProductWP" Width="225" Height="50" Margin="0,100,40,0" HorizontalAlignment="Right">
             <StackPanel Width="20" Height="34" Margin="7">
-                <Button Content="▲" Width="20" Height="17" FontSize="10"/>
-                <Button Content="▼" Width="20" Height="17" FontSize="10"/>
-
+                <Button Name="quantityUp" Content="▲" Width="20" Height="17" FontSize="10" Click="quantityUp_Click"/>
+                <Button Name="quantityDown" Content="▼" Width="20" Height="17" FontSize="10" Click="quantityDown_Click"/>
             </StackPanel>
-            <Label Content="1" Style="{StaticResource quantityLabel}" Padding="17,5,0,0" />
-            <Button Style="{StaticResource regularBtn}" Content="Add To Cart" Margin="5"/>
+            <Label Name="quantityBtn" Content="1" Style="{StaticResource quantityLabel}" Padding="17,5,0,0" />
+            <Button Name="addToCartBtn" Style="{StaticResource regularBtn}" Content="Add To Cart" Margin="5"/>
         </WrapPanel>
 
         <WrapPanel Name="descriptionWP" Width="225" Height="80" Background="#D9D9D9" Margin="0,230,40,0" HorizontalAlignment="Right">
