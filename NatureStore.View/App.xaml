@@ -101,7 +101,7 @@
             <Setter Property="Width" Value="100" />
             <Setter Property="Height" Value="50" />
             <Setter Property="Background" Value="#FFBAEBFF"  />
-
+            <Setter Property="Cursor" Value="Hand" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#FFB0D9FF"/>
@@ -143,6 +143,31 @@
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="Margin" Value="0,-15,0,0" />
         </Style>
+
+        
+        <Style x:Key="quantityLabel" TargetType="Label" >
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontFamily" Value="Berlin Sans FB" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Background" Value="#D9D9D9" />
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+
+        <Style x:Key="productLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Berlin Sans FB" />
+            <Setter Property="Cursor" Value="Hand" />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFB0D9FF"/>
+                    <Setter Property="Visibility" Value="Visible" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
 
     </Application.Resources>
 </Application>

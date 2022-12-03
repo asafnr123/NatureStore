@@ -10,7 +10,7 @@
 
     <Grid Background="#FF4387D6">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -25,7 +25,7 @@
 
         <Frame Name="HomeFrame" Grid.Row="1" />
 
-        <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-25,0,0" MouseLeave="ProducstWP_MouseLeave">
+        <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-15,0,0" MouseLeave="ProducstWP_MouseLeave">
             <uc:DropMenu x:Name="productsMenu"></uc:DropMenu>
         </WrapPanel>
 

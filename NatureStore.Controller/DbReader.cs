@@ -5,6 +5,7 @@ using NatureStore.Model.Entities;
 using NatureStore.Model.Entitys;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,70 @@ namespace NatureStore.Controller
         {
             return (from user in db.Users
                     select user).ToList();
+        }
+
+        public List<Product> GetAllProtein()
+        {
+            return (from prod in db.Products
+                        join cate in db.Categories
+                        on prod.Category equals cate
+                        where prod.Category.Id == 1
+                        select new Product
+                        {
+                            Name = prod.Name,
+                            Category = cate,
+                            Brand = prod.Brand,
+                            Description = prod.Description,
+                            Price = prod.Price
+                        }).ToList();
+        }
+
+        public List<Product> GetAllVitamins()
+        {
+            return (from prod in db.Products
+                    join cate in db.Categories
+                    on prod.Category equals cate
+                    where prod.Category.Id == 3
+                    select new Product
+                    {
+                        Name = prod.Name,
+                        Category = cate,
+                        Brand = prod.Brand,
+                        Description = prod.Description,
+                        Price = prod.Price
+                    }).ToList();
+        }
+
+        public List<Product> GetAllCreatine()
+        {
+            return (from prod in db.Products
+                    join cate in db.Categories
+                    on prod.Category equals cate
+                    where prod.Category.Id == 4
+                    select new Product
+                    {
+                        Name = prod.Name,
+                        Category = cate,
+                        Brand = prod.Brand,
+                        Description = prod.Description,
+                        Price = prod.Price
+                    }).ToList();
+        }
+
+        public List<Product> GetAllSnacks()
+        {
+            return (from prod in db.Products
+                    join cate in db.Categories
+                    on prod.Category equals cate
+                    where prod.Category.Id == 2
+                    select new Product
+                    {
+                        Name = prod.Name,
+                        Category = cate,
+                        Brand = prod.Brand,
+                        Description = prod.Description,
+                        Price = prod.Price
+                    }).ToList();
         }
     }
 }
