@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NatureStore.Model.Context;
 
@@ -11,9 +12,11 @@ using NatureStore.Model.Context;
 namespace NatureStore.Model.Migrations
 {
     [DbContext(typeof(NatureStoreDbContext))]
-    partial class NatureStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221204192917_ImageForProduct")]
+    partial class ImageForProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
