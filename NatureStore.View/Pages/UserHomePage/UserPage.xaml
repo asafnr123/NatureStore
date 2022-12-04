@@ -23,7 +23,7 @@
             <Path Width="20" Name="UserIcon" Height="20" MouseEnter="UserIcon_MouseEnter" Margin="350,0,0,0" Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Style="{StaticResource icon}" />
         </WrapPanel>
 
-        <Frame Name="HomeFrame" Grid.Row="1" />
+        <Frame Name="HomeFrame" Grid.Row="1" NavigationUIVisibility="Hidden" />
 
         <WrapPanel Name="ProducstWP" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="60,-15,0,0" MouseLeave="ProducstWP_MouseLeave">
             <uc:DropMenu x:Name="productsMenu"></uc:DropMenu>

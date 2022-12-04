@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace NatureStore.View.Pages.ProductsDropMenu
 {
@@ -46,6 +47,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     var nameLabel = new Label();
                     nameLabel.Content = protein.Name;
                     nameLabel.Style = (Style)FindResource("productLabel");
+                    nameLabel.MouseDown += LabelButton_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -109,5 +111,39 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             this.quantityBtn.Content = quantity.ToString();
             }
         }
+
+
+        private void LabelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+            // Stretch="Fill" Width="230" Height="220"
+
+            if (ProductType == "Protein")
+            {
+
+            }
+
+            else if (ProductType == "Snacks")
+            {
+
+            }
+
+            else if (ProductType == "Vitamins")
+            {
+
+            }
+
+            else if (ProductType == "Creatine")
+            {
+
+            }
+        }
+
+
+
+
     }
 }

@@ -12,8 +12,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Content="The Nature Store" Style="{StaticResource header}"/>
-        <Frame Grid.Row="1" Name="MainFrame" Source="/Pages/Login/LoginPage.xaml" />
+        <WrapPanel Grid.Row="0" Background="#FF2A507D">
+            <Label Content="The Nature Store" Style="{StaticResource header}" Margin="265,15,0,0"/>
+        </WrapPanel>
+        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Name="MainFrame" Source="/Pages/Login/LoginPage.xaml" />
 
 
     </Grid>

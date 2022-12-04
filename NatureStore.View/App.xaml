@@ -29,7 +29,7 @@
 
         <Style x:Key="header" TargetType="Label">
             <Setter Property="FontSize" Value="32" />
-            <Setter Property="FontFamily" Value="Berlin Sans FB" />
+            <Setter Property="FontFamily" Value="Blanka" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
