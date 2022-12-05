@@ -116,10 +116,27 @@ namespace NatureStore.View.Pages.ProductsDropMenu
         private void LabelButton_Click(object sender, RoutedEventArgs e)
         {
 
-
-
-
             // Stretch="Fill" Width="230" Height="220"
+
+            var myLabel = ((Label)sender);
+            Image finalImage = new Image();
+            finalImage.Stretch = Stretch.Fill;
+            finalImage.Width = 230;
+            finalImage.Height = 220;
+
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            string check = reader.GetImagePathByProdName((string)myLabel.Content);
+            image.UriSource = new Uri(reader.GetImagePathByProdName((string)myLabel.Content));
+            image.EndInit();
+
+            if(image.UriSource != null)
+            {
+                finalImage.Source = image;
+                this.imageSP.Children.Add(finalImage);
+            }
+
+
 
             if (ProductType == "Protein")
             {

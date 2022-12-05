@@ -139,5 +139,18 @@ namespace NatureStore.Controller
                         Price = prod.Price
                     }).ToList();
         }
+
+        public string GetImagePathByProdName(string prodName)
+        {
+            var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
+            if (product != null)
+            {
+                return "";
+            }
+            else
+                return null;
+        }
+
+       
     }
 }
