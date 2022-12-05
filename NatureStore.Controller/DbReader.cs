@@ -48,37 +48,57 @@ namespace NatureStore.Controller
 
         public List<Category> GetAllCategorys()
         {
-            return (from cate in db.Categories
+            var query = (from cate in db.Categories
                    select cate).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Order> GetAllOrders()
         {
-            return (from order in db.Orders
+            var query = (from order in db.Orders
                     select order).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Product> GetAllProducts()
         {
-            return (from prod in db.Products
+            var query = (from prod in db.Products
                     select prod).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Stock> GetAllStocks()
         {
-            return (from stock in db.Stocks
+            var query = (from stock in db.Stocks
                     select stock).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<User> GetAllUsers()
         {
-            return (from user in db.Users
+            var query = (from user in db.Users
                     select user).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Product> GetAllProtein()
         {
-            return (from prod in db.Products
+            var query =  (from prod in db.Products
                         join cate in db.Categories
                         on prod.Category equals cate
                         where prod.Category.Id == 1
@@ -90,11 +110,15 @@ namespace NatureStore.Controller
                             Description = prod.Description,
                             Price = prod.Price
                         }).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Product> GetAllVitamins()
         {
-            return (from prod in db.Products
+            var query = (from prod in db.Products
                     join cate in db.Categories
                     on prod.Category equals cate
                     where prod.Category.Id == 3
@@ -106,11 +130,15 @@ namespace NatureStore.Controller
                         Description = prod.Description,
                         Price = prod.Price
                     }).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Product> GetAllCreatine()
         {
-            return (from prod in db.Products
+            var query = (from prod in db.Products
                     join cate in db.Categories
                     on prod.Category equals cate
                     where prod.Category.Id == 4
@@ -122,11 +150,15 @@ namespace NatureStore.Controller
                         Description = prod.Description,
                         Price = prod.Price
                     }).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public List<Product> GetAllSnacks()
         {
-            return (from prod in db.Products
+            var query = (from prod in db.Products
                     join cate in db.Categories
                     on prod.Category equals cate
                     where prod.Category.Id == 2
@@ -138,6 +170,10 @@ namespace NatureStore.Controller
                         Description = prod.Description,
                         Price = prod.Price
                     }).ToList();
+            if (query != null)
+                return query;
+            else
+                return null;
         }
 
         public string GetImagePathByProdName(string prodName)
@@ -145,12 +181,24 @@ namespace NatureStore.Controller
             var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
             if (product != null)
             {
-                return "";
+                return product.Image;
             }
             else
                 return null;
         }
 
-       
+        public string GetDescriptionByProdName(string prodName)
+        {
+            var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
+            if (product != null)
+            {
+                return product.Description;
+            }
+            else
+                return null;
+        }
+
+
+
     }
 }

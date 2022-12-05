@@ -19,11 +19,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pages\ProductsDropMenu\Pictures\Protein1.jpg" />
+    <None Remove="Pages\ProductsDropMenu\Pictures\Protein2.jpg" />
+    <None Remove="Pages\ProductsDropMenu\Pictures\Protein3.jpg" />
+    <None Remove="Pages\ProductsDropMenu\Pictures\Protein4.jpg" />
+    <None Remove="Pages\ProductsDropMenu\Pictures\Protein5.jpg" />
+    <None Remove="Pages\ProductsDropMenu\Pictures\Vitamin1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NatureStore.Controller\NatureStore.Controller.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\ProductsDropMenu\Pictures\" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Protein1.jpg" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Protein2.jpg" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Protein3.jpg" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Protein4.jpg" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Protein5.jpg" />
+    <Resource Include="Pages\ProductsDropMenu\Pictures\Vitamin1.jpg" />
   </ItemGroup>
 
 </Project>

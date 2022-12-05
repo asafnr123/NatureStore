@@ -32,11 +32,10 @@ namespace NatureStore.View.Pages.ProductsDropMenu
 
 
         public string ProductType { get; set; }
-        private readonly DbReader reader = new();
+        private readonly DbReader? reader = new();
 
         public void AddProductsToMenu()
         {
-            Label newLabel = new Label();
             
             if(ProductType == "Protein")
             {
@@ -47,46 +46,53 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     var nameLabel = new Label();
                     nameLabel.Content = protein.Name;
                     nameLabel.Style = (Style)FindResource("productLabel");
-                    nameLabel.MouseDown += LabelButton_Click;
+                    nameLabel.MouseDown += AddImage_Label_Click;
+                    nameLabel.MouseDown += AddDescription_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
 
             else if (ProductType == "Snacks")
             {
-                List<Product> allSnacks = reader.GetAllSnacks();
+                List<Product> allProtein = reader.GetAllSnacks();
                 this.menuSP.Children.Clear();
-                allSnacks.ForEach(snack =>
+                allProtein.ForEach(snack =>
                 {
                     var nameLabel = new Label();
                     nameLabel.Content = snack.Name;
                     nameLabel.Style = (Style)FindResource("productLabel");
+                    nameLabel.MouseDown += AddImage_Label_Click;
+                    nameLabel.MouseDown += AddDescription_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
 
             else if (ProductType == "Vitamins")
             {
-                List<Product> allVitamins = reader.GetAllVitamins();
+                List<Product> allProtein = reader.GetAllVitamins();
                 this.menuSP.Children.Clear();
-                allVitamins.ForEach(vitamin =>
+                allProtein.ForEach(vitamin =>
                 {
                     var nameLabel = new Label();
                     nameLabel.Content = vitamin.Name;
                     nameLabel.Style = (Style)FindResource("productLabel");
+                    nameLabel.MouseDown += AddImage_Label_Click;
+                    nameLabel.MouseDown += AddDescription_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
 
             else if (ProductType == "Creatine")
             {
-                List<Product> allCreatine = reader.GetAllCreatine();
+                List<Product> allProtein = reader.GetAllCreatine();
                 this.menuSP.Children.Clear();
-                allCreatine.ForEach(creatine =>
+                allProtein.ForEach(creatine =>
                 {
                     var nameLabel = new Label();
                     nameLabel.Content = creatine.Name;
                     nameLabel.Style = (Style)FindResource("productLabel");
+                    nameLabel.MouseDown += AddImage_Label_Click;
+                    nameLabel.MouseDown += AddDescription_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -113,12 +119,9 @@ namespace NatureStore.View.Pages.ProductsDropMenu
         }
 
 
-        private void LabelButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            // Stretch="Fill" Width="230" Height="220"
-
-            var myLabel = ((Label)sender);
+        private void AddImage_Label_Click(object sender, RoutedEventArgs e)
+        {            
+            var myLabel = (Label)sender;
             Image finalImage = new Image();
             finalImage.Stretch = Stretch.Fill;
             finalImage.Width = 230;
@@ -126,37 +129,27 @@ namespace NatureStore.View.Pages.ProductsDropMenu
 
             BitmapImage image = new BitmapImage();
             image.BeginInit();
-            string check = reader.GetImagePathByProdName((string)myLabel.Content);
-            image.UriSource = new Uri(reader.GetImagePathByProdName((string)myLabel.Content));
+            image.UriSource = new Uri(reader?.GetImagePathByProdName((string)myLabel.Content));
             image.EndInit();
 
             if(image.UriSource != null)
             {
                 finalImage.Source = image;
+                this.imageSP.Children.Clear();
                 this.imageSP.Children.Add(finalImage);
             }
+        }
 
+        private void AddDescription_Label_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var myLabel = (Label)sender;
+            var txtBlock = new TextBlock();
+            txtBlock.Style = (Style)FindResource("describTxt");
+            txtBlock.Text = reader?.GetDescriptionByProdName((string)myLabel.Content);
 
-
-            if (ProductType == "Protein")
-            {
-
-            }
-
-            else if (ProductType == "Snacks")
-            {
-
-            }
-
-            else if (ProductType == "Vitamins")
-            {
-
-            }
-
-            else if (ProductType == "Creatine")
-            {
-
-            }
+            this.descriptionWP.Children.Clear();
+            this.descriptionWP.Children.Add(txtBlock);
         }
 
 
