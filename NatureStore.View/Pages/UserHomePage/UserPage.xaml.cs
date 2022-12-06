@@ -1,4 +1,6 @@
-﻿using NatureStore.View.MyUserControls;
+﻿using NatureStore.Model.Entitys;
+using NatureStore.View.MyUserControls;
+using NatureStore.View.Pages.UserCart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +20,15 @@ namespace NatureStore.View.Pages.UserHomePage
 {
     public partial class UserPage : Page
     {
-        public UserPage()
+        public UserPage(User user)
         {
             InitializeComponent();
+            this.user = user;
             this.productsMenu.userPage = this;
+            this.productsMenu.user = this.user;
         }
+
+        private User user { get; set; }
 
         private void HouseIcon_Clicked(object sender, MouseEventArgs e)
         {
@@ -51,6 +57,11 @@ namespace NatureStore.View.Pages.UserHomePage
         private void UserWP_MouseLeave(object sender, MouseEventArgs e)
         {
             UserWP.Visibility = Visibility.Hidden;
+        }
+
+        private void Cart_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.HomeFrame.Navigate(new CartPage());
         }
     }
 }

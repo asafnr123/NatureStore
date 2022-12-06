@@ -1,4 +1,6 @@
-﻿using NatureStore.View.Pages.ProductsDropMenu;
+﻿using NatureStore.Model.Entitys;
+using NatureStore.View.Pages;
+using NatureStore.View.Pages.ProductsDropMenu;
 using NatureStore.View.Pages.UserHomePage;
 using System;
 using System.Collections.Generic;
@@ -28,31 +30,32 @@ namespace NatureStore.View.MyUserControls
         }
 
 
-        public UserPage userPage { get; set; }
+        public UserPage userPage { private get; set; }
+        public User user { private get; set; }
 
 
         private void protein_MouseDown(object sender, MouseButtonEventArgs e)
         {
             
-            userPage.HomeFrame.Navigate(new ProductPage("Protein"));
+            userPage.HomeFrame.Navigate(new ProductPage("Protein", user));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void snacks_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Snacks"));
+            userPage.HomeFrame.Navigate(new ProductPage("Snacks", user));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void vitamins_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Vitamins"));
+            userPage.HomeFrame.Navigate(new ProductPage("Vitamins", user));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void creatine_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Creatine"));
+            userPage.HomeFrame.Navigate(new ProductPage("Creatine", user));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
     }

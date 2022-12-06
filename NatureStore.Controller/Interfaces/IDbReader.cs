@@ -19,6 +19,7 @@ namespace NatureStore.Controller.Interfaces
         List<Product> GetAllVitamins();
         List<Product> GetAllCreatine();
         List<Product> GetAllSnacks();
+        User GetUser(string username, string password);
         string GetDescriptionByProdName(string prodName);
         string GetImagePathByProdName(string prodName);
         bool CheckIfUserExistInDb(string username, string password);

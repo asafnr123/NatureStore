@@ -1,4 +1,5 @@
 ﻿using NatureStore.Controller;
+using NatureStore.Model.Entitys;
 using NatureStore.View.Pages.AdminHomePage;
 using NatureStore.View.Pages.UserHomePage;
 using System.Windows;
@@ -21,6 +22,7 @@ namespace NatureStore.View.Pages.Login
         private DbReader reader = new();
         private string username;
         private string password;
+        private User user;
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -32,7 +34,10 @@ namespace NatureStore.View.Pages.Login
                 if (reader.CheckUserTypeByUsername(username))
                     this.NavigationService.Navigate(new AdminPage());
                 else
-                    this.NavigationService.Navigate(new UserPage());
+                {
+                    this.user = reader.GetUser(username, password);
+                    this.NavigationService.Navigate(new UserPage(user));
+                }
             }
             else
                 MessageBox.Show("Username Or Password Are Incorrect");

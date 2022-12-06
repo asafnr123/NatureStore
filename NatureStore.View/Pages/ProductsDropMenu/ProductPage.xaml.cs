@@ -23,17 +23,23 @@ namespace NatureStore.View.Pages.ProductsDropMenu
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage(string productType)
+        public ProductPage(string productType, User user)
         {
             InitializeComponent();
             ProductType = productType;
+            this.user = user;
             AddProductsToMenu();
+            
         }
 
+        
 
         public string ProductType { get; set; }
+        public string SelectedProduct { get; set; }
+
         private readonly DbReader? reader = new();
 
+        private User user;
         public void AddProductsToMenu()
         {
             
@@ -49,6 +55,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
                     nameLabel.MouseDown += AddPrice_Label_Click;
+                    nameLabel.MouseDown += SetSelectedProduct;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -65,6 +72,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
                     nameLabel.MouseDown += AddPrice_Label_Click;
+                    nameLabel.MouseDown += SetSelectedProduct;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -81,6 +89,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
                     nameLabel.MouseDown += AddPrice_Label_Click;
+                    nameLabel.MouseDown += SetSelectedProduct;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -97,6 +106,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
                     nameLabel.MouseDown += AddPrice_Label_Click;
+                    nameLabel.MouseDown += SetSelectedProduct;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -165,6 +175,13 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             // get price function returns 0 if null 
             if(price != "0")
                 this.priceLbl.Content = price;
+        }
+
+        private void SetSelectedProduct(object sender, RoutedEventArgs e)
+        {
+            var label = (Label)sender;
+            this.ProductType = (string)label.Content;
+            MessageBox.Show(user.UserName);
         }
 
 

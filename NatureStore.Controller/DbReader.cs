@@ -203,7 +203,14 @@ namespace NatureStore.Controller
                 return 0;
         }
 
+        public User GetUser(string username, string password)
+        {
+            User user = db.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
 
-
+            if (user != null)
+                return user;
+            else
+                return null;
+        }
     }
 }
