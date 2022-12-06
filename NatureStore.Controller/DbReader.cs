@@ -180,9 +180,7 @@ namespace NatureStore.Controller
         {
             var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
             if (product != null)
-            {
                 return product.Image;
-            }
             else
                 return null;
         }
@@ -191,11 +189,18 @@ namespace NatureStore.Controller
         {
             var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
             if (product != null)
-            {
                 return product.Description;
-            }
             else
                 return null;
+        }
+
+        public float GetPriceByProdName(string prodName)
+        {
+            var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
+            if (product != null)
+                return product.Price;
+            else
+                return 0;
         }
 
 

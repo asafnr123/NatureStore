@@ -48,6 +48,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.Style = (Style)FindResource("productLabel");
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
+                    nameLabel.MouseDown += AddPrice_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -63,6 +64,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.Style = (Style)FindResource("productLabel");
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
+                    nameLabel.MouseDown += AddPrice_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -78,6 +80,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.Style = (Style)FindResource("productLabel");
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
+                    nameLabel.MouseDown += AddPrice_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -93,6 +96,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
                     nameLabel.Style = (Style)FindResource("productLabel");
                     nameLabel.MouseDown += AddImage_Label_Click;
                     nameLabel.MouseDown += AddDescription_Label_Click;
+                    nameLabel.MouseDown += AddPrice_Label_Click;
                     this.menuSP.Children.Add(nameLabel);
                 });
             }
@@ -100,21 +104,21 @@ namespace NatureStore.View.Pages.ProductsDropMenu
 
         private void quantityUp_Click(object sender, RoutedEventArgs e)
         {
-            int quantity = int.Parse(this.quantityBtn.Content.ToString());
+            int quantity = int.Parse(this.quantityLbl.Content.ToString());
             if(quantity < 10)
             {
             quantity++;
-            this.quantityBtn.Content = quantity.ToString();
+            this.quantityLbl.Content = quantity.ToString();
             }
         }
 
         private void quantityDown_Click(object sender, RoutedEventArgs e)
         {
-            int quantity = int.Parse(this.quantityBtn.Content.ToString());
+            int quantity = int.Parse(this.quantityLbl.Content.ToString());
             if(quantity > 1)
             {
             quantity--;
-            this.quantityBtn.Content = quantity.ToString();
+            this.quantityLbl.Content = quantity.ToString();
             }
         }
 
@@ -124,8 +128,8 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             var myLabel = (Label)sender;
             Image finalImage = new Image();
             finalImage.Stretch = Stretch.Fill;
-            finalImage.Width = 230;
-            finalImage.Height = 220;
+            finalImage.Width = 250;
+            finalImage.Height = 240;
 
             BitmapImage image = new BitmapImage();
             image.BeginInit();
@@ -147,9 +151,20 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             var txtBlock = new TextBlock();
             txtBlock.Style = (Style)FindResource("describTxt");
             txtBlock.Text = reader?.GetDescriptionByProdName((string)myLabel.Content);
-
+            
             this.descriptionWP.Children.Clear();
             this.descriptionWP.Children.Add(txtBlock);
+        }
+
+        private void AddPrice_Label_Click(object sender, RoutedEventArgs e)
+        {
+            var myLabel = (Label)sender;
+
+            string price = reader?.GetPriceByProdName((string)myLabel.Content).ToString() + "$";
+
+            // get price function returns 0 if null 
+            if(price != "0")
+                this.priceLbl.Content = price;
         }
 
 
