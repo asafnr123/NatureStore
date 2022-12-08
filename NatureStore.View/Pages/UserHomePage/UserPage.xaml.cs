@@ -1,4 +1,5 @@
-﻿using NatureStore.Model.Entitys;
+﻿using NatureStore.Controller;
+using NatureStore.Model.Entitys;
 using NatureStore.View.MyUserControls;
 using NatureStore.View.Pages.UserCart;
 using System;
@@ -23,12 +24,13 @@ namespace NatureStore.View.Pages.UserHomePage
         public UserPage(User user)
         {
             InitializeComponent();
-            this.user = user;
+            loggedInUser = user;
             this.productsMenu.userPage = this;
-            this.productsMenu.user = this.user;
+            this.productsMenu.loggedInUser = loggedInUser;
         }
 
-        private User user { get; set; }
+        private User loggedInUser { get; set; }
+        private readonly CartHandler cardHandler = new CartHandler();
 
         private void HouseIcon_Clicked(object sender, MouseEventArgs e)
         {
@@ -61,7 +63,7 @@ namespace NatureStore.View.Pages.UserHomePage
 
         private void Cart_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.HomeFrame.Navigate(new CartPage());
+            this.HomeFrame.Navigate(new CartPage(cardHandler.GetProductsInCart));
         }
     }
 }

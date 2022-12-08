@@ -212,5 +212,15 @@ namespace NatureStore.Controller
             else
                 return null;
         }
+
+        public Product GetProduct(string prodName)
+        {
+            Product prod = db.Products.FirstOrDefault(p => p.Name == prodName);
+
+            if (prod != null)
+                return prod;
+            else
+                return null;
+        }
     }
 }

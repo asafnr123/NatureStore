@@ -1,5 +1,7 @@
 ﻿using NatureStore.Controller;
 using NatureStore.Model.Entitys;
+using NatureStore.View.MyUserControls;
+using NatureStore.View.Pages.UserCart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +29,8 @@ namespace NatureStore.View.Pages.ProductsDropMenu
         {
             InitializeComponent();
             ProductType = productType;
-            this.user = user;
+            this.loggedInUser = user;
             AddProductsToMenu();
-            
         }
 
         
@@ -38,8 +39,9 @@ namespace NatureStore.View.Pages.ProductsDropMenu
         public string SelectedProduct { get; set; }
 
         private readonly DbReader? reader = new();
+        private CartHandler cartHandler = new();
 
-        private User user;
+        private User loggedInUser;
         public void AddProductsToMenu()
         {
             
@@ -180,12 +182,16 @@ namespace NatureStore.View.Pages.ProductsDropMenu
         private void SetSelectedProduct(object sender, RoutedEventArgs e)
         {
             var label = (Label)sender;
-            this.ProductType = (string)label.Content;
-            MessageBox.Show(user.UserName);
+            this.SelectedProduct = (string)label.Content;
         }
 
+        private void addToCartBtn_Click(object sender, RoutedEventArgs e)
+        {
 
-
-
+            cartHandler.AddProductToCart(this.SelectedProduct);
+            cartHandler.AddProductQuantity((string)quantityLbl.Content);
+            MessageBox.Show("Product Added To Cart");
+            quantityLbl.Content = "1";
+        }
     }
 }

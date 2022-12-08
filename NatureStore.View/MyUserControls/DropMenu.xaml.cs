@@ -31,31 +31,30 @@ namespace NatureStore.View.MyUserControls
 
 
         public UserPage userPage { private get; set; }
-        public User user { private get; set; }
+        public User loggedInUser { private get; set; }
 
 
         private void protein_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
-            userPage.HomeFrame.Navigate(new ProductPage("Protein", user));
+            userPage.HomeFrame.Navigate(new ProductPage("Protein", loggedInUser));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void snacks_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Snacks", user));
+            userPage.HomeFrame.Navigate(new ProductPage("Snacks", loggedInUser));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void vitamins_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Vitamins", user));
+            userPage.HomeFrame.Navigate(new ProductPage("Vitamins", loggedInUser));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
 
         private void creatine_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            userPage.HomeFrame.Navigate(new ProductPage("Creatine", user));
+            userPage.HomeFrame.Navigate(new ProductPage("Creatine", loggedInUser));
             userPage.ProducstWP.Visibility = Visibility.Hidden;
         }
     }

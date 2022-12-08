@@ -25,7 +25,7 @@
                 </StackPanel>
 
                 <Label Name="quantityLbl" Content="1" Style="{StaticResource quantityLabel}" Padding="17,5,0,0" />
-                <Button Name="addToCartBtn" Style="{StaticResource addToCart}"  Content="Add To Cart" Margin="5"/>
+                <Button Name="addToCartBtn" Style="{StaticResource addToCart}"  Content="Add To Cart" Margin="5" Click="addToCartBtn_Click"/>
                 <Label Name="priceLbl" Style="{StaticResource quantityLabel}" Width="60" FontSize="17" Padding="7,5,0,0" />
 
             </WrapPanel>

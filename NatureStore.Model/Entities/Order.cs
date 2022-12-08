@@ -13,5 +13,14 @@ namespace NatureStore.Model.Entities
         public User User { get; set; }
         public DateTime OrderDate { get; set; }
         public float TotalValue { get; set; }
+
+
+        //public Order(User user, DateTime orderDate)
+        //{
+        //    User = user;
+        //    OrderDate = orderDate;
+        //}
+
+
     }
 }
