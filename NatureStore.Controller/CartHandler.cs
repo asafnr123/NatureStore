@@ -10,39 +10,24 @@ namespace NatureStore.Controller
 {
     public class CartHandler
     {
-        public static List<Product> ProductsToCart = new();
-        private readonly DbReader reader = new();
-        public static List<string> ProdQuantity { get; set; } = new List<string>();
+        public static List<IProductToCart> ProductsInCart = new();
 
 
-        public List<Product> GetProductsInCart
+        public List<IProductToCart> GetProductsInCart
         {
-            get { return ProductsToCart; }
+            get { return ProductsInCart; }
         }
 
-        public List<string> GetAllQuantity
+
+        public void AddProductToCart(IProductToCart prod)
         {
-            get { return ProdQuantity; }
+            if (prod != null)
+                ProductsInCart.Add(prod);
         }
 
-        public bool RemoveProductFromCart(Product prod)
+        public void RemoveProductFromCart(IProductToCart prod)
         {
-            // returns true if object was removed 
-            return ProductsToCart.Remove(prod);
-        } 
-
-        public void AddProductToCart(string prodName)
-        {
-            var product = reader.GetProduct(prodName);
-            if(product != null)
-                ProductsToCart.Add(product);
-        }
-
-        public void AddProductQuantity(string quantity)
-        {
-            if (quantity != null)
-                ProdQuantity.Add(quantity);
-
+            ProductsInCart.Remove(prod);
         }
 
 

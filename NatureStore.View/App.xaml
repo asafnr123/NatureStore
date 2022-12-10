@@ -199,6 +199,25 @@
             </Style.Triggers>
         </Style>
 
+
+        <Style x:Key="deleteProdIcon" TargetType="Path">
+            <Setter Property="Data" Value="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+            <Setter Property="Fill" Value="LightGray" />
+            <Setter Property="Margin" Value="14,4,0,4" />
+            <Setter Property="Cursor" Value="Hand" />
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Fill" Value="#FFB0D9FF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+
+
+     
     </Application.Resources>
 </Application>
 

@@ -30,7 +30,7 @@ namespace NatureStore.View.Pages.UserHomePage
         }
 
         private User loggedInUser { get; set; }
-        private readonly CartHandler cardHandler = new CartHandler();
+        private readonly CartHandler cartHandler = new CartHandler();
 
         private void HouseIcon_Clicked(object sender, MouseEventArgs e)
         {
@@ -63,7 +63,7 @@ namespace NatureStore.View.Pages.UserHomePage
 
         private void Cart_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.HomeFrame.Navigate(new CartPage(cardHandler.GetProductsInCart));
+            this.HomeFrame.Navigate(new CartPage(this.cartHandler.GetProductsInCart));
         }
     }
 }

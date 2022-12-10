@@ -33,15 +33,21 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             AddProductsToMenu();
         }
 
-        
-
         public string ProductType { get; set; }
+
         public string SelectedProduct { get; set; }
 
         private readonly DbReader? reader = new();
+
         private CartHandler cartHandler = new();
 
         private User loggedInUser;
+
+
+
+
+
+
         public void AddProductsToMenu()
         {
             
@@ -187,9 +193,10 @@ namespace NatureStore.View.Pages.ProductsDropMenu
 
         private void addToCartBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            cartHandler.AddProductToCart(this.SelectedProduct);
-            cartHandler.AddProductQuantity((string)quantityLbl.Content);
+            var productUserControl = new ProductInCart();
+            productUserControl.ProdName = this.SelectedProduct;
+            productUserControl.ProdQty = (string)quantityLbl.Content;
+            cartHandler.AddProductToCart(productUserControl);
             MessageBox.Show("Product Added To Cart");
             quantityLbl.Content = "1";
         }

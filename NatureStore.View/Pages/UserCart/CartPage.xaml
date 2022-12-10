@@ -16,20 +16,24 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="50" />
-                <ColumnDefinition Width="60" />
             </Grid.ColumnDefinitions>
 
             <StackPanel Name="cartSP" Orientation="Vertical" Grid.Column="0">
-                
             </StackPanel>
 
-            <StackPanel Name="QtySP" Orientation="Vertical" Grid.Column="1">
-                
+            <StackPanel Name="trashSP" Orientation="Vertical" Grid.Column="2">
             </StackPanel>
-
         </Grid>
 
         
+        
+        <WrapPanel Width="200" Height="200" HorizontalAlignment="Right" Margin="0,0,50,70" >
+            <TextBlock Style="{StaticResource describTxt}">Total Value: </TextBlock>
+            <Button Margin="0,160,0,0">Confirm Order</Button>
+        </WrapPanel>
+        
+
+
 
 
     </Grid>

@@ -24,16 +24,18 @@ namespace NatureStore.View.Pages.UserCart
     /// </summary>
     public partial class CartPage : Page
     {
-        public CartPage(List<Product> userProduts)
+        public CartPage(List<IProductToCart> userProduts)
         {
             InitializeComponent();
-            CheckIfCartEmpty(userProduts);
+            this.UserProducts = userProduts;
+            CheckIfCartEmpty(UserProducts);
            
         }
 
         CartHandler cartHandler = new();
+        public List<IProductToCart> UserProducts { get; set; }  
 
-        public void CheckIfCartEmpty(List<Product> produts)
+        public void CheckIfCartEmpty(List<IProductToCart> produts)
         {
             if (produts == null || produts.Count == 0)
             {
@@ -51,37 +53,35 @@ namespace NatureStore.View.Pages.UserCart
             
         }
 
-        public void SetProductsToCart(List<Product> produts)
+        public void SetProductsToCart(List<IProductToCart> produts)
         {
-            this.cartSP.Children.Clear();
-            this.QtySP.Children.Clear();
-
-            
-            
+            cartSP.Children.Clear();
+            trashSP.Children.Clear();
 
             produts.ForEach(prod =>
             {
-                var nameLabel = new Label();
+                var prodInCart = new ProductInCart();
+                prodInCart.ProdName = prod.ProdName;
+                prodInCart.ProdQty = prod.ProdQty;
 
-                nameLabel.Content = prod.Name;
+                var deleteIcon = new Path();
+                deleteIcon.Style = (Style)FindResource("deleteProdIcon");
+                deleteIcon.Tag = prod;
+                deleteIcon.MouseDown += DeleteProdFromCart;
 
-                nameLabel.Style = (Style)FindResource("productLabel");
-                this.cartSP.Children.Add(nameLabel);
+                this.cartSP.Children.Add(prodInCart);
+                this.trashSP.Children.Add(deleteIcon);
             });
 
 
-            cartHandler.GetAllQuantity.ForEach(q =>
-            {
-                var qtyLabel = new Label();
+        }
 
-                qtyLabel.Content = q;
-                qtyLabel.Style = (Style)FindResource("labels");
-                qtyLabel.Padding = new Thickness(20, 5, 5, 5);
 
-                this.QtySP.Children.Add(qtyLabel);
-            });
-            
-            
+        private void DeleteProdFromCart(object sender, RoutedEventArgs e)
+        {
+            var myProd = ((Path)sender).Tag;
+            cartHandler.RemoveProductFromCart((IProductToCart)myProd);
+            SetProductsToCart(UserProducts);
         }
     }
 }
