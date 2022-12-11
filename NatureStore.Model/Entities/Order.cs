@@ -15,11 +15,11 @@ namespace NatureStore.Model.Entities
         public float TotalValue { get; set; }
 
 
-        //public Order(User user, DateTime orderDate)
-        //{
-        //    User = user;
-        //    OrderDate = orderDate;
-        //}
+        public Order(float totalValue)
+        {
+            OrderDate = DateTime.Now;
+            TotalValue = totalValue;
+        }
 
 
     }

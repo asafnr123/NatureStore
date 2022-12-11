@@ -15,12 +15,11 @@ namespace NatureStore.Model.Entities
         public int Quantity { get; set; }
         public float OrderValue { get; set; }
 
-        //public OrderDetail(Order order, Product product, int quantity, float orderValue)
-        //{
-        //    Order = order;
-        //    Product = product;
-        //    Quantity = quantity;
-        //    OrderValue = orderValue;
-        //}
+        public OrderDetail(int quantity, float orderValue)
+        {
+            Quantity = quantity;
+            OrderValue = orderValue;
+        }
+
     }
 }

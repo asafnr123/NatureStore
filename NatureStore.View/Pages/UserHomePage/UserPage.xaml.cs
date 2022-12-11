@@ -63,7 +63,7 @@ namespace NatureStore.View.Pages.UserHomePage
 
         private void Cart_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.HomeFrame.Navigate(new CartPage(this.cartHandler.GetProductsInCart));
+            this.HomeFrame.Navigate(new CartPage(this.cartHandler.GetProductsInCart, this.loggedInUser));
         }
     }
 }

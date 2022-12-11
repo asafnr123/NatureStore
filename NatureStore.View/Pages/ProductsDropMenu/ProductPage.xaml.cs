@@ -181,7 +181,7 @@ namespace NatureStore.View.Pages.ProductsDropMenu
             string price = reader?.GetPriceByProdName((string)myLabel.Content).ToString() + "$";
 
             // get price function returns 0 if null 
-            if(price != "0")
+            if(price != "0$")
                 this.priceLbl.Content = price;
         }
 

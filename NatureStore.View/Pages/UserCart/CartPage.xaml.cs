@@ -24,16 +24,18 @@ namespace NatureStore.View.Pages.UserCart
     /// </summary>
     public partial class CartPage : Page
     {
-        public CartPage(List<IProductToCart> userProduts)
+        public CartPage(List<IProductToCart> userProduts, User user)
         {
             InitializeComponent();
             this.UserProducts = userProduts;
+            this.loggedInUser = user;
             CheckIfCartEmpty(UserProducts);
            
         }
 
         CartHandler cartHandler = new();
-        public List<IProductToCart> UserProducts { get; set; }  
+        public List<IProductToCart> UserProducts { get; set; }
+        private User loggedInUser;
 
         public void CheckIfCartEmpty(List<IProductToCart> produts)
         {
@@ -45,6 +47,7 @@ namespace NatureStore.View.Pages.UserCart
                 emptyLbl.HorizontalAlignment = HorizontalAlignment.Center;
                 emptyLbl.VerticalAlignment= VerticalAlignment.Center;
                 this.cartSP.Children.Add(emptyLbl);
+                totalValueLbl.Content = "    0";
             }
             else
             {
@@ -58,21 +61,27 @@ namespace NatureStore.View.Pages.UserCart
             cartSP.Children.Clear();
             trashSP.Children.Clear();
 
-            produts.ForEach(prod =>
+            if (produts.Count > 0)
             {
-                var prodInCart = new ProductInCart();
-                prodInCart.ProdName = prod.ProdName;
-                prodInCart.ProdQty = prod.ProdQty;
+                produts.ForEach(prod =>
+                {
+                    var prodInCart = new ProductInCart();
+                    prodInCart.ProdName = prod.ProdName;
+                    prodInCart.ProdQty = prod.ProdQty;
 
-                var deleteIcon = new Path();
-                deleteIcon.Style = (Style)FindResource("deleteProdIcon");
-                deleteIcon.Tag = prod;
-                deleteIcon.MouseDown += DeleteProdFromCart;
+                    var deleteIcon = new Path();
+                    deleteIcon.Style = (Style)FindResource("deleteProdIcon");
+                    deleteIcon.Tag = prod;
+                    deleteIcon.MouseDown += DeleteProdFromCart;
 
-                this.cartSP.Children.Add(prodInCart);
-                this.trashSP.Children.Add(deleteIcon);
-            });
+                    this.cartSP.Children.Add(prodInCart);
+                    this.trashSP.Children.Add(deleteIcon);
+                    this.totalValueLbl.Content = String.Format("{0:0.00}", cartHandler.GetTotalValue())  + "$";
 
+                });
+            }
+            else
+                totalValueLbl.Content = "    0";
 
         }
 
@@ -82,6 +91,15 @@ namespace NatureStore.View.Pages.UserCart
             var myProd = ((Path)sender).Tag;
             cartHandler.RemoveProductFromCart((IProductToCart)myProd);
             SetProductsToCart(UserProducts);
+        }
+
+        private void confirmOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (cartHandler.ConfirmOrder(loggedInUser))
+                MessageBox.Show("Thank You, You'r Order Has Been Accepted");
+            else
+                MessageBox.Show("Sorry, Something Went Wrong");
         }
     }
 }
