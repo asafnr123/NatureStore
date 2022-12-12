@@ -31,7 +31,7 @@
         </WrapPanel>
 
         <WrapPanel Name="UserWP" Grid.Row="1" Style="{StaticResource userInfoWpStyle}" MouseLeave="UserWP_MouseLeave">
-            <uc:UserInfoMenu Margin="0,0,0,0"/>
+            <uc:UserInfoMenu x:Name="userInfoMenu" Margin="0,0,0,0"/>
         </WrapPanel>
     </Grid>
 </Page>

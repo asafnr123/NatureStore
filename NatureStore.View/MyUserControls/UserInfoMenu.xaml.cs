@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using NatureStore.Model.Entitys;
+using NatureStore.View.Pages.UserHomePage;
+using NatureStore.View.Pages.UserProfilePage;
+using System;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace NatureStore.View.MyUserControls
 {
@@ -23,6 +16,14 @@ namespace NatureStore.View.MyUserControls
         public UserInfoMenu()
         {
             InitializeComponent();
+        }
+
+        public User LoggedInUser { private get; set; }
+        public UserPage userPage { get; set; }
+
+        private void profile_MouseDown_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            userPage.HomeFrame.Navigate(new ProfilePage(LoggedInUser));
         }
     }
 }

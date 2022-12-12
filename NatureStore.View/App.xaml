@@ -121,9 +121,10 @@
         <Style x:Key="userInfoLabel" TargetType="Label">
             <Setter Property="FontSize" Value="14" />
             <Setter Property="FontFamily" Value="Berlin Sans FB" />
-            <Setter Property="Width" Value="300" />
+            <Setter Property="Width" Value="175" />
             <Setter Property="Height" Value="25" />
             <Setter Property="Background" Value="#FFBAEBFF"  />
+            <Setter Property="Cursor" Value="Hand" />
 
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">

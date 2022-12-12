@@ -27,6 +27,9 @@ namespace NatureStore.View.Pages.UserHomePage
             loggedInUser = user;
             this.productsMenu.userPage = this;
             this.productsMenu.loggedInUser = loggedInUser;
+
+            this.userInfoMenu.LoggedInUser = loggedInUser;
+            this.userInfoMenu.userPage = this;
         }
 
         private User loggedInUser { get; set; }
