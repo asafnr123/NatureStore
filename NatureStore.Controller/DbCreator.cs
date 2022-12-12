@@ -34,51 +34,20 @@ namespace NatureStore.Controller
                 return false;
         }
 
-        public bool AddNewOrder(Order order)
-        {
-            try
-            {
-                if (order != null)
-                {
-                    db.Orders.Add(order);
-                    db.SaveChanges();
-                    return true;
-                }
-                else
-                    return false;
-            }
-            catch( DbUpdateException)
-            {
-                if (db.Orders.FirstOrDefault(o => o.Id == order.Id) != null)
-                    return true;
-                else
-                    return false;
-            }
-            
-            
-        }
 
         public bool AddNewOrderDetail(OrderDetail orderDetail)
         {
-            try
+            if (orderDetail != null)
             {
-                if (orderDetail != null)
-                {
-                    db.OrderDetails.Add(orderDetail);
-                    db.SaveChanges();
-                    return true;
-                }
-                else
-                    return false;
+                db.OrderDetails.Add(orderDetail);
+                db.SaveChanges();
+                return true;
             }
-            catch (DbUpdateException)
-            {
-                if (db.Orders.FirstOrDefault(o => o.Id == orderDetail.Id) != null)
-                    return true;
-                else
-                    return false;
-            }
+            else
+                return false;
         }
+      
+        
 
         public bool AddNewProduct(Product product)
         {

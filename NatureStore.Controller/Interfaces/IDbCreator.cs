@@ -12,7 +12,6 @@ namespace NatureStore.Controller.Interfaces
     {
         bool AddNewCategory(Category category);
         bool AddNewProduct(Product product);
-        bool AddNewOrder(Order order);
         bool AddNewOrderDetail(OrderDetail orderDetail);    
 
 

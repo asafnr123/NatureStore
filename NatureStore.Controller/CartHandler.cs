@@ -37,11 +37,15 @@ namespace NatureStore.Controller
         public float GetTotalValue()
         {
             float totalValue = 0;
-            ProductsInCart.ForEach(prod =>
+            if(ProductsInCart.Count > 0)
             {
-                var prodPrice = reader.GetPriceByProdName(prod.ProdName);
-                totalValue += prodPrice * int.Parse(prod.ProdQty);
-            });
+                ProductsInCart.ForEach(prod =>
+                {
+                    var prodPrice = reader.GetPriceByProdName(prod.ProdName);
+                    totalValue += prodPrice * int.Parse(prod.ProdQty);
+                });
+
+            }
 
             return totalValue;
         }
@@ -49,29 +53,32 @@ namespace NatureStore.Controller
 
         public bool ConfirmOrder(User user)
         {
-            float totalValue = GetTotalValue();
+            
+            if (user == null)
+                return false;
 
-            if (user == null || totalValue == 0)
+            float totalValue = GetTotalValue();
+            
+            if(totalValue == 0)
                 return false;
 
             bool success = false;
             var order = new Order(totalValue);
-            order.User = user;
+            if(order.User == null)
+                order.User = user;
 
             ProductsInCart.ForEach(prod =>
             {
                 var product = reader.GetProduct(prod.ProdName);
-                var orderD = new OrderDetail(int.Parse(prod.ProdQty), product.Price);
+                var quantity = int.Parse(prod.ProdQty);
+                var orderD = new OrderDetail(quantity, product.Price * quantity);
                 orderD.Product = product;
                 orderD.Order = order;
                 if (adder.AddNewOrderDetail(orderD))
                     success = true;
                 else
                     success = false;
-            });
-
-            if(success == true)
-                adder.AddNewOrder(order);
+            });                
 
             return success;
 
