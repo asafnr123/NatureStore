@@ -47,7 +47,7 @@ namespace NatureStore.View.Pages.UserCart
                 emptyLbl.HorizontalAlignment = HorizontalAlignment.Center;
                 emptyLbl.VerticalAlignment= VerticalAlignment.Center;
                 this.cartSP.Children.Add(emptyLbl);
-                totalValueLbl.Content = "    0";
+                totalValueLbl.Content = "0.00$";
             }
             else
             {
@@ -97,7 +97,14 @@ namespace NatureStore.View.Pages.UserCart
         {
 
             if (cartHandler.ConfirmOrder(loggedInUser))
+            {
                 MessageBox.Show("Thank You, You'r Order Has Been Accepted");
+                cartSP.Children.Clear();
+                trashSP.Children.Clear();
+                cartHandler.ClearProductsInCart();
+                this.totalValueLbl.Content = String.Format("{0:0.00}", cartHandler.GetTotalValue()) + "$";
+            }
+
             else
                 MessageBox.Show("Sorry, Something Went Wrong");
         }

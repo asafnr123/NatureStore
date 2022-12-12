@@ -50,6 +50,11 @@ namespace NatureStore.Controller
             return totalValue;
         }
 
+        public void ClearProductsInCart()
+        {
+            this.GetProductsInCart.Clear();
+        }
+
 
         public bool ConfirmOrder(User user)
         {
