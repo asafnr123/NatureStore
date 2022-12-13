@@ -13,6 +13,19 @@ namespace NatureStore.View.Pages.UserProfilePage
         public ProfilePage(User user)
         {
             InitializeComponent();
+            UserInfo(user);
+        }
+
+
+        private void UserInfo(User u)
+        {
+            if (u != null)
+            {
+                usernameLbl.Content += u.UserName;
+                addressLbl.Content += u.Address;
+                cityLbl.Content += u.City;
+                countryLbl.Content += u.Country;
+            }
         }
     }
 }

@@ -7,10 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="175">
     <Grid>
-
-
         <Label Name="profile" Content="Profile" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="134,4,0,0" MouseDown="profile_MouseDown"/>
-        <Label Name="orders" Content="My Orders" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="112,4,0,0" Margin="0,25,0,0" />
+        <Label Name="orders" Content="My Orders" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="112,4,0,0" Margin="0,25,0,0" MouseDown="orders_MouseDown" />
         <Label Name="logOut" Content="Log Out" Style="{StaticResource userInfoLabel}" VerticalAlignment="Top" Padding="124,4,0,0" Margin="0,50,0,10" />
     </Grid>
 </UserControl>

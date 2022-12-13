@@ -223,5 +223,27 @@ namespace NatureStore.Controller
                 return null;
         }
 
+        public List<UserExistOrder> GetUserOrders(User user)
+        {
+            var result = (from order in db.Orders
+                         join orderD in db.OrderDetails on order equals orderD.Order
+                         where order.User == user
+                         select new UserExistOrder
+                         {
+                             OrderNumber = order.Id, 
+                             Prod = orderD.Product.Name,
+                             Quantity = orderD.Quantity.ToString(),
+                             OrderDate = order.OrderDate.ToString("dd/MM/yyyy"),
+                             Price = String.Format("{0:0.00}", orderD.OrderValue)
+
+                         }).ToList();
+
+            if (result != null)
+                return result.ToList();
+            else
+                return null;
+
+            
+        }
     }
 }
