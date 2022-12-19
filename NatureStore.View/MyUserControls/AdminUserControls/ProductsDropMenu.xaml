@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="NatureStore.View.MyUserControls.AdminUserControls.ProductsDropMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NatureStore.View.MyUserControls.AdminUserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="105">
+    <Grid Background="#FF97BFDE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Name="allProdLbl" Style="{StaticResource categoryLabel}" Content="All Products" Grid.Row="0" Margin="7" FontSize="13" MouseDown="allProdLbl_MouseDown" />
+        <Label Name="newProdLbl" Style="{StaticResource categoryLabel}" Content="New Product" Grid.Row="1" Margin="7" FontSize="13" MouseDown="newProdLbl_MouseDown"/>
+        <Label Name="editProdLbl" Style="{StaticResource categoryLabel}" Content="Edit Product" Grid.Row="2" Margin="7" FontSize="13" />
+        <Label Name="delProdLbl" Style="{StaticResource categoryLabel}" Content="Delete Product" Grid.Row="3" Margin="7" FontSize="13" />
+    </Grid>
+</UserControl>

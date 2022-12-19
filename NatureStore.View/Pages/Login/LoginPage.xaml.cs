@@ -1,5 +1,4 @@
 ﻿using NatureStore.Controller;
-using NatureStore.Model.Entitys;
 using NatureStore.View.Pages.AdminHomePage;
 using NatureStore.View.Pages.UserHomePage;
 using System.Windows;

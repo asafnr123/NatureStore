@@ -68,5 +68,10 @@ namespace NatureStore.View.Pages.UserHomePage
         {
             this.HomeFrame.Navigate(new CartPage(this.cartHandler.GetProductsInCart, this.loggedInUser));
         }
+
+        private void Products_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ProducstWP.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -73,9 +73,9 @@ namespace NatureStore.Controller
             if (username.Length < 4)
                 return FormStatus.LengthTooShort;
             else if (regex.IsMatch(username))
-                return FormStatus.UsernameInvalid;
-            else
                 return FormStatus.Valid;
+            else
+                return FormStatus.UsernameInvalid;
         }
     }
 }

@@ -41,12 +41,27 @@
             <Setter Property="Cursor" Value="Hand" />
         </Style>
 
+        <Style x:Key="addminNavBtn" TargetType="Button">
+            <Setter Property="Width" Value="105" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="Background" Value="#FF97BFDE" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2f91f1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
 
         <Style x:Key="userInput" TargetType="TextBox">
             <Setter Property="FontSize" Value="16" />
             <Setter Property="Width" Value="200" />
             <Setter Property="Height" Value="25" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
 
         <Style x:Key="passInput" TargetType="PasswordBox">
@@ -100,7 +115,6 @@
             <Setter Property="FontFamily" Value="Berlin Sans FB" />
             <Setter Property="Width" Value="100" />
             <Setter Property="Height" Value="50" />
-            <Setter Property="Background" Value="#FFBAEBFF"  />
             <Setter Property="Cursor" Value="Hand" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">

@@ -1,5 +1,4 @@
-﻿using NatureStore.View.Pages.Login;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NatureStore.View
+namespace NatureStore.View.MyUserControls.AdminUserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UserDropMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserDropMenu : UserControl
     {
-        public MainWindow()
+        public UserDropMenu()
         {
             InitializeComponent();
-            
         }
-
-
     }
 }

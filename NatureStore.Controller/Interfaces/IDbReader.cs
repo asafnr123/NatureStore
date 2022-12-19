@@ -12,7 +12,7 @@ namespace NatureStore.Controller.Interfaces
     {
         List<User> GetAllUsers();
         List<Order> GetAllOrders();
-        List<Product> GetAllProducts();
+        IEnumerable<object> GetAllProducts();
         List<Stock> GetAllStocks();
         List<Category> GetAllCategorys();
         List<Product> GetAllProtein();

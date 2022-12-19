@@ -3,12 +3,35 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:adminMenus ="clr-namespace:NatureStore.View.MyUserControls.AdminUserControls"
       xmlns:local="clr-namespace:NatureStore.View.Pages.AdminHomePage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminHomePage">
+      Title="AdminPage">
 
-    <Grid Background="White">
-        <TextBlock Text="Admin" FontSize="55" HorizontalAlignment="Center"/>
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Name="AdminNavBarSp" Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button Name="orders" Style="{StaticResource addminNavBtn}" Content="Orders" />
+            <Button Name="products" Style="{StaticResource addminNavBtn}" Content="Products" MouseEnter="products_MouseEnter" />
+            <Button Name="users" Style="{StaticResource addminNavBtn}" Content="Users" MouseEnter="users_MouseEnter"/>
+        </StackPanel>
+        
+        <WrapPanel Name="productsWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="126,-9.5,0,0" Width="105" Height="150" MouseLeave="productsWp_MouseLeave">
+            <adminMenus:ProductsDropMenu x:Name="prodDropMenu" Grid.Row="1"></adminMenus:ProductsDropMenu>
+        </WrapPanel>
+
+        <WrapPanel Name="userssWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="245,-9.5,0,0" Width="105" Height="150" MouseLeave="userssWp_MouseLeave" > 
+            <adminMenus:UserDropMenu Grid.Row="1"></adminMenus:UserDropMenu>
+        </WrapPanel>
+
+
+        <Frame Name="MainAdminFrame"  Grid.Row="1" Grid.RowSpan="2"></Frame>
+        <DataGrid Name="myDataGrid" Grid.Row="2" IsReadOnly="True" Visibility="Hidden" Background="Transparent" />
     </Grid>
 </Page>

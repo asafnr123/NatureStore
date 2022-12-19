@@ -1,7 +1,10 @@
 ﻿using NatureStore.Model.Entitys;
+using NatureStore.View.Pages.Login;
 using NatureStore.View.Pages.UserHomePage;
 using NatureStore.View.Pages.UserOrders;
 using NatureStore.View.Pages.UserProfilePage;
+using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -33,6 +36,11 @@ namespace NatureStore.View.MyUserControls
         {
             userPage.UserWP.Visibility = Visibility.Collapsed;
             userPage.HomeFrame.Navigate(new UserOrdersPage(LoggedInUser));
+        }
+
+        private void logOut_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

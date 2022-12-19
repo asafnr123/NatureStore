@@ -66,10 +66,21 @@ namespace NatureStore.Controller
                 return null;
         }
 
-        public List<Product> GetAllProducts()
+        public IEnumerable<object> GetAllProducts()
         {
             var query = (from prod in db.Products
-                    select prod).ToList();
+                        join cate in db.Categories on prod.Category equals cate into prodCateTable
+                        select new 
+                        {
+                            Id = prod.Id,
+                            Name = prod.Name,
+                            CategoryId = prod.Category.Id,
+                            Price = prod.Price,
+                            Description = prod.Description,
+                            Brand = prod.Brand,
+                            Image = prod.Image,
+                        }).ToList();
+
             if (query != null)
                 return query;
             else
