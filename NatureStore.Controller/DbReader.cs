@@ -216,45 +216,40 @@ namespace NatureStore.Controller
 
         public User GetUser(string username, string password)
         {
-            User user = db.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
+            return db.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
+        }
 
-            if (user != null)
-                return user;
-            else
-                return null;
+        public Category GetCategory(int id)
+        {
+            return db.Categories.FirstOrDefault(c => c.Id == id);
         }
 
         public Product GetProduct(string prodName)
         {
-            Product prod = db.Products.FirstOrDefault(p => p.Name == prodName);
-
-            if (prod != null)
-                return prod;
-            else
-                return null;
+            return db.Products.FirstOrDefault(p => p.Name == prodName);
         }
 
         public List<UserExistOrder> GetUserOrders(User user)
         {
             var result = (from order in db.Orders
-                         join orderD in db.OrderDetails on order equals orderD.Order
-                         where order.User == user
-                         select new UserExistOrder
-                         {
-                             OrderNumber = order.Id, 
-                             Prod = orderD.Product.Name,
-                             Quantity = orderD.Quantity.ToString(),
-                             OrderDate = order.OrderDate.ToString("dd/MM/yyyy"),
-                             Price = String.Format("{0:0.00}", orderD.OrderValue)
+                          join orderD in db.OrderDetails on order equals orderD.Order
+                          where order.User == user
+                          orderby order.OrderDate descending
+                          select new UserExistOrder
+                          {
+                              OrderNumber = order.Id,
+                              Prod = orderD.Product.Name,
+                              Quantity = orderD.Quantity.ToString(),
+                              OrderDate = order.OrderDate.ToString("dd/MM/yyyy"),
+                              Price = String.Format("{0:0.00}", orderD.OrderValue)
 
-                         }).ToList();
+                          }).Take(12).ToList();
 
             if (result != null)
                 return result.ToList();
             else
                 return null;
-
-            
         }
+
     }
 }

@@ -10,16 +10,14 @@
 
     <Grid Background="#FF4387D6">
 
-        <Label Content="You'r Orders" Style="{StaticResource header}" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="335,5,0,0"/>
+        <Label Content="You'r Orders" Style="{StaticResource header}" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="310,5,0,0"/>
         <Label Content="No." Style="{StaticResource header}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="135,58,0,0" />
         <Label Content="Products" Style="{StaticResource header}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="220,58,0,0" />
         <Label Content="Qty" Style="{StaticResource header}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="447,58,0,0" />
         <Label Content="Order Date" Style="{StaticResource header}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="495,58,0,0" />
         <Label Content="Price" Style="{StaticResource header}" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="620,58,0,0" />
-        
-            <StackPanel Name="userOrdersSP" Orientation="Vertical" HorizontalAlignment="Center" Margin="40,50,0,0" Grid.Column="0" Width="550" Height="300" Background="LightGray">
-                
-            </StackPanel>
+
+        <StackPanel Name="userOrdersSP" Orientation="Vertical" HorizontalAlignment="Center" Margin="20,50,0,0" Grid.Column="0" Width="550" Height="300" Background="LightGray" />
 
 
     </Grid>

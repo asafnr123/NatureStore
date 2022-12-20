@@ -9,26 +9,26 @@
       Title="NewProductPage">
 
     <Grid Background="LightGray">
-        <WrapPanel Width="325" Height="400" HorizontalAlignment="Left" Margin="40">
-            <Label Name="prodName" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Name :" />
-            <TextBox Style="{StaticResource userInput }" Margin="52,0,0,0"/>
+        <WrapPanel Width="325" Height="400" HorizontalAlignment="Left" >
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Name :" />
+            <TextBox Name="prodName" Style="{StaticResource userInput }" Margin="52,0,0,0"/>
 
-            <Label Name="prodCate" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Category Id:" />
-            <TextBox Style="{StaticResource userInput }" Margin="18,0,0,0"/>
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Category Id:" />
+            <TextBox Name="prodCate" Style="{StaticResource userInput }" Margin="18,0,0,0"/>
 
-            <Label Name="prodPrice" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Price:" />
-            <TextBox Style="{StaticResource userInput }" Margin="65,0,0,0"/>
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Price:" />
+            <TextBox Name="prodPrice" Style="{StaticResource userInput }" Margin="65,0,0,0"/>
 
-            <Label Name="prodDesc" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Description:" />
-            <TextBox Style="{StaticResource userInput }" Margin="23,0,0,0"/>
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Description:" />
+            <TextBox Name="prodDesc" Style="{StaticResource userInput }" Margin="23,0,0,0"/>
 
-            <Label Name="prodBrand" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Brand:" />
-            <TextBox Style="{StaticResource userInput }" Margin="57,0,0,0" />
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Brand:" />
+            <TextBox Name="prodBrand" Style="{StaticResource userInput }" Margin="57,0,0,0" />
 
-            <Label Name="prodImg" Style="{StaticResource labels}" Margin="3,10,0,15" Content="Image Path:" />
-            <TextBox Style="{StaticResource userInput }" Margin="18,0,0,0" />
+            <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Image Path:" />
+            <TextBox Name="prodImg" Style="{StaticResource userInput }" Margin="18,0,0,0" />
 
-            <Button Name="prodSubmitBtn" Style="{StaticResource regularBtn}" Content="Submit" Margin="100,15,0,0" />
+            <Button Name="prodSubmitBtn" Style="{StaticResource regularBtn}" Content="Submit" Margin="100,15,0,0" Click="prodSubmitBtn_Click"/>
 
 
         </WrapPanel>
