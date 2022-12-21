@@ -70,5 +70,15 @@ namespace NatureStore.View.Pages.AdminHomePage
 
 
         }
+
+        private void clearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            prodName.Text = "";
+            prodCate.Text = "";
+            prodPrice.Text = "";
+            prodDesc.Text = "";
+            prodBrand.Text = "";
+            prodImg.Text = "";
+        }
     }
 }

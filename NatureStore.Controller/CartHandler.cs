@@ -74,7 +74,7 @@ namespace NatureStore.Controller
 
             ProductsInCart.ForEach(prod =>
             {
-                var product = reader.GetProduct(prod.ProdName);
+                var product = reader.GetProductByName(prod.ProdName);
                 var quantity = int.Parse(prod.ProdQty);
                 var orderD = new OrderDetail(quantity, product.Price * quantity);
                 orderD.Product = product;

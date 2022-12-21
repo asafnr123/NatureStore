@@ -28,7 +28,8 @@
             <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Image Path:" />
             <TextBox Name="prodImg" Style="{StaticResource userInput }" Margin="18,0,0,0" />
 
-            <Button Name="prodSubmitBtn" Style="{StaticResource regularBtn}" Content="Submit" Margin="100,15,0,0" Click="prodSubmitBtn_Click"/>
+            <Button Name="prodSubmitBtn" Style="{StaticResource regularBtn}" Content="Submit" Margin="35,15,0,0" Click="prodSubmitBtn_Click"/>
+            <Button Name="clearBtn" Style="{StaticResource regularBtn}" Content="Clear" Margin="15,15,0,0" Click="clearBtn_Click" />
 
 
         </WrapPanel>

@@ -11,12 +11,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Label Name="allProdLbl" Style="{StaticResource categoryLabel}" Content="All Products" Grid.Row="0" Margin="7" FontSize="13" MouseDown="allProdLbl_MouseDown" />
         <Label Name="newProdLbl" Style="{StaticResource categoryLabel}" Content="New Product" Grid.Row="1" Margin="7" FontSize="13" MouseDown="newProdLbl_MouseDown"/>
-        <Label Name="editProdLbl" Style="{StaticResource categoryLabel}" Content="Edit Product" Grid.Row="2" Margin="7" FontSize="13" />
-        <Label Name="delProdLbl" Style="{StaticResource categoryLabel}" Content="Delete Product" Grid.Row="3" Margin="7" FontSize="13" />
+        <Label Name="editProdLbl" Style="{StaticResource categoryLabel}" Content="Edit Product" Grid.Row="2" Margin="7" FontSize="13" MouseDown="editProdLbl_MouseDown" />
     </Grid>
 </UserControl>

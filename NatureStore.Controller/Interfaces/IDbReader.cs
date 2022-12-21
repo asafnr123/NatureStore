@@ -20,7 +20,7 @@ namespace NatureStore.Controller.Interfaces
         List<Product> GetAllCreatine();
         List<Product> GetAllSnacks();
         User GetUser(string username, string password);
-        Product GetProduct(string prodName);
+        Product GetProductByName(string prodName);
         List<UserExistOrder> GetUserOrders(User user);
         string GetDescriptionByProdName(string prodName);
         string GetImagePathByProdName(string prodName);

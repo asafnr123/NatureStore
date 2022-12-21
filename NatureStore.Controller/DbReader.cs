@@ -69,17 +69,17 @@ namespace NatureStore.Controller
         public IEnumerable<object> GetAllProducts()
         {
             var query = (from prod in db.Products
-                        join cate in db.Categories on prod.Category equals cate into prodCateTable
-                        select new 
-                        {
-                            Id = prod.Id,
-                            Name = prod.Name,
-                            CategoryId = prod.Category.Id,
-                            Price = prod.Price,
-                            Description = prod.Description,
-                            Brand = prod.Brand,
-                            Image = prod.Image,
-                        }).ToList();
+                         join cate in db.Categories on prod.Category equals cate into prodCateTable
+                         select new
+                         {
+                             Id = prod.Id,
+                             Name = prod.Name,
+                             CategoryId = prod.Category.Id,
+                             Price = prod.Price,
+                             Description = prod.Description,
+                             Brand = prod.Brand,
+                             Image = prod.Image,
+                         });
 
             if (query != null)
                 return query;
@@ -224,10 +224,18 @@ namespace NatureStore.Controller
             return db.Categories.FirstOrDefault(c => c.Id == id);
         }
 
-        public Product GetProduct(string prodName)
+        public Product GetProductByName(string prodName)
         {
             return db.Products.FirstOrDefault(p => p.Name == prodName);
         }
+
+        public Product GetProductById(int id)
+        {
+            return db.Products.FirstOrDefault(p => p.Id == id);
+            
+        }
+
+
 
         public List<UserExistOrder> GetUserOrders(User user)
         {

@@ -78,5 +78,22 @@ namespace NatureStore.Controller
             else
                 return false;
         }
+
+        public bool CheckIfProductExist(string idStr)
+        {
+            int id = 0;
+            if (int.TryParse(idStr, out id))
+            {
+                var query = from prod in db.Products
+                            select prod.Id;
+
+                if (query.Contains(id))
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
     }
 }
