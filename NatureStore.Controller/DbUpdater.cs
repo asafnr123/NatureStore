@@ -115,6 +115,19 @@ namespace NatureStore.Controller
                 return false;
         }
 
+        public bool RemoveUser(int id)
+        {
+            var user = db.Users.FirstOrDefault(u => u.Id == id);
+            if (user != null)
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
 
 
 

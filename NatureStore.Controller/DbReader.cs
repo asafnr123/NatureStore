@@ -219,6 +219,11 @@ namespace NatureStore.Controller
             return db.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
         }
 
+        public User GetUserById(int id)
+        {
+            return db.Users.FirstOrDefault(u => u.Id == id);
+        }
+
         public Category GetCategory(int id)
         {
             return db.Categories.FirstOrDefault(c => c.Id == id);

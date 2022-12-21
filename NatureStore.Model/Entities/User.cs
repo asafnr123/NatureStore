@@ -24,7 +24,6 @@ namespace NatureStore.Model.Entitys
             Address = address;
             City = city;
             Country = country;
-            UserType = UserType.User;
         }
     }
 

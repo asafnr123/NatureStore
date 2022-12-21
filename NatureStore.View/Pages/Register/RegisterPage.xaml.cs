@@ -76,6 +76,7 @@ namespace NatureStore.View.Pages.Login
             else
             {
                 User user = new User(username.Text, password.Password, address.Text, city.Text, country.Text);
+                user.UserType = Model.UserType.User;
                 pageController.AddUserToDb(user);
                 MessageBox.Show("Successfully Registered"); 
             }

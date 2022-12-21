@@ -23,16 +23,16 @@
             <Button Name="editImgBtn" Style="{StaticResource addminNavBtn}" Content="Img" Margin="10" Click="editImgBtn_Click"/>
         </StackPanel>
 
-        <Border Name="editingBorder" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Grid.Row="1" Width="375" Height="200" HorizontalAlignment="Left" Margin="50" >
+        <Border Name="editingBorder" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Grid.Row="1" Width="375" Height="200" HorizontalAlignment="Left" Margin="50" Visibility="Hidden" >
             <WrapPanel Name="editingWP" Background="DarkGray">
                 <Label Name="prodIdLbl" Style="{StaticResource labels}" Content="Product Id :" Margin="10"/>
-                <TextBox Name="prodIdTxt" Style="{StaticResource userInput }" Width="160" Margin="40,0,0,0" />
+                <TextBox Name="prodIdTxt" Style="{StaticResource userInput }" Width="160" Margin="-100,0,0,80" />
 
-                <Label Name="Lbl1" Style="{StaticResource labels}" Content="New Name :" Margin="10"/>
-                <TextBox Name="Txt1" Style="{StaticResource userInput }" Width="160" TextWrapping="Wrap" />
+                <Label Name="Lbl1" Style="{StaticResource labels}" Content="New Name :" Margin="-160,70,0,0" />
+                <TextBox Name="Txt1" Style="{StaticResource userInput }" Width="160" TextWrapping="Wrap" Margin="-160,40,0,0" />
 
-                <Button Name="editBtn" Style="{StaticResource regularBtn}" Content="Edit" Width="100" Margin="60,30,0,0" Click="EditBtn_Click" />
-                <Button Name="removeBtn" Style="{StaticResource regularBtn}" Content="Remove" Width="100" Margin="30,30,0,0" Background="IndianRed" Click="removeBtn_Click"  />
+                <Button Name="editBtn" Style="{StaticResource regularBtn}" Content="Edit" Width="100" Margin="-120,150,0,0" Click="EditBtn_Click" />
+                <Button Name="removeBtn" Style="{StaticResource regularBtn}" Content="Remove" Width="100" Margin="20,150,0,0" Background="IndianRed" Click="removeBtn_Click"  />
             </WrapPanel>
         </Border>
     </Grid>

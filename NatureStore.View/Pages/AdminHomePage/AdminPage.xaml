@@ -26,8 +26,8 @@
             <adminMenus:ProductsDropMenu x:Name="prodDropMenu" Grid.Row="1"></adminMenus:ProductsDropMenu>
         </WrapPanel>
 
-        <WrapPanel Name="userssWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="245,-9.5,0,0" Width="105" Height="150" MouseLeave="userssWp_MouseLeave" > 
-            <adminMenus:UserDropMenu Grid.Row="1"></adminMenus:UserDropMenu>
+        <WrapPanel Name="usersWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="245,-9.5,0,0" Width="105" Height="150" MouseLeave="userssWp_MouseLeave" > 
+            <adminMenus:UserDropMenu x:Name="userDropMenu" Grid.Row="1"></adminMenus:UserDropMenu>
         </WrapPanel>
 
 

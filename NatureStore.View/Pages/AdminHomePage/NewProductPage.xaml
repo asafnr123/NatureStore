@@ -9,7 +9,7 @@
       Title="NewProductPage">
 
     <Grid Background="LightGray">
-        <WrapPanel Width="325" Height="400" HorizontalAlignment="Left" >
+        <WrapPanel Width="325" Height="400" HorizontalAlignment="Left" Margin="20" >
             <Label Style="{StaticResource labels}" Margin="3,10,0,15" Content="Name :" />
             <TextBox Name="prodName" Style="{StaticResource userInput }" Margin="52,0,0,0"/>
 

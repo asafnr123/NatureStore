@@ -13,8 +13,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Style="{StaticResource categoryLabel}" Grid.Row="0" Content="All Users" Margin="3" FontSize="13"  />
-        <Label Style="{StaticResource categoryLabel}" Grid.Row="1" Content="Add User" Margin="3" FontSize="13"/>
-        <Label Style="{StaticResource categoryLabel}" Grid.Row="2" Content="Remove User" Margin="3" FontSize="13" />
+        <Label Name="allUsersLbl" Style="{StaticResource categoryLabel}" Grid.Row="0" Content="All Users" Margin="3" FontSize="13" MouseDown="allUsersLbl_MouseEnter"  />
+        <Label Name="addUserLbl" Style="{StaticResource categoryLabel}" Grid.Row="1" Content="Add User" Margin="3" FontSize="13" MouseDown="addUserLbl_MouseDown"/>
+        <Label Name="removeUserLbl" Style="{StaticResource categoryLabel}" Grid.Row="2" Content="Remove User" Margin="3" FontSize="13" MouseDown="removeUserLbl_MouseDown"/>
     </Grid>
 </UserControl>

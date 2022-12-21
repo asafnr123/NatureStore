@@ -69,7 +69,7 @@ namespace NatureStore.Controller
 
         public FormStatus ValidateUsername(string username)
         {
-            var regex = new Regex("[a-z][0,9]+");
+            var regex = new Regex("[a-z][0-9]+");
             if (username.Length < 4)
                 return FormStatus.LengthTooShort;
             else if (regex.IsMatch(username))
@@ -77,5 +77,6 @@ namespace NatureStore.Controller
             else
                 return FormStatus.UsernameInvalid;
         }
+
     }
 }
