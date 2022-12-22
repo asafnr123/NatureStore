@@ -17,11 +17,17 @@
         </Grid.RowDefinitions>
 
         <StackPanel Name="AdminNavBarSp" Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
-            <Button Name="orders" Style="{StaticResource addminNavBtn}" Content="Orders" />
+            <Button Name="orders" Style="{StaticResource addminNavBtn}" Content="Orders" MouseEnter="orders_MouseEnter" />
             <Button Name="products" Style="{StaticResource addminNavBtn}" Content="Products" MouseEnter="products_MouseEnter" />
             <Button Name="users" Style="{StaticResource addminNavBtn}" Content="Users" MouseEnter="users_MouseEnter"/>
+            <Button Name="categorys" Style="{StaticResource addminNavBtn}" Content="Categorys" MouseEnter="users_MouseEnter"/>
+            <Button Name="stocks" Style="{StaticResource addminNavBtn}" Content="Stocks" MouseEnter="users_MouseEnter"/>
         </StackPanel>
-        
+
+        <WrapPanel Name="ordersWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="7,-9.5,0,0" Width="105" Height="150" MouseLeave="orderssWp_MouseLeave" >
+            <adminMenus:OrderDropMenu x:Name="orderDropMenu" Grid.Row="1"></adminMenus:OrderDropMenu>
+        </WrapPanel>
+
         <WrapPanel Name="productsWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="126,-9.5,0,0" Width="105" Height="150" MouseLeave="productsWp_MouseLeave">
             <adminMenus:ProductsDropMenu x:Name="prodDropMenu" Grid.Row="1"></adminMenus:ProductsDropMenu>
         </WrapPanel>

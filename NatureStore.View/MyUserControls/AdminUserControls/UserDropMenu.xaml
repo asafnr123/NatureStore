@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NatureStore.View.MyUserControls.AdminUserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="105">
+             d:DesignHeight="150" d:DesignWidth="105">
     <Grid Background="#FF97BFDE">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />

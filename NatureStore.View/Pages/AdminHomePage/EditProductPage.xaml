@@ -9,12 +9,12 @@
       Title="EditProductPage">
 
     <Grid Background="LightGray">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,40,0,0">
             <Button Name="editNameBtn" Style="{StaticResource addminNavBtn}" Content="Name" Margin="10" Click="editNameBtn_Click"/>
             <Button Name="editCategoryBtn" Style="{StaticResource addminNavBtn}" Content="Category" Margin="10" Click="editCategoryBtn_Click" />
             <Button Name="editPriceBtn" Style="{StaticResource addminNavBtn}" Content="Price" Margin="10" Click="editPriceBtn_Click" />
@@ -23,7 +23,7 @@
             <Button Name="editImgBtn" Style="{StaticResource addminNavBtn}" Content="Img" Margin="10" Click="editImgBtn_Click"/>
         </StackPanel>
 
-        <Border Name="editingBorder" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Grid.Row="1" Width="375" Height="200" HorizontalAlignment="Left" Margin="50" Visibility="Hidden" >
+        <Border Name="editingBorder" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Grid.Column="1"  Width="375" Height="200" HorizontalAlignment="Center"  Visibility="Visible" >
             <WrapPanel Name="editingWP" Background="DarkGray">
                 <Label Name="prodIdLbl" Style="{StaticResource labels}" Content="Product Id :" Margin="10"/>
                 <TextBox Name="prodIdTxt" Style="{StaticResource userInput }" Width="160" Margin="-100,0,0,80" />

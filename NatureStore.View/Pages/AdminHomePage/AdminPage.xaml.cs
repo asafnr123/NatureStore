@@ -25,6 +25,7 @@ namespace NatureStore.View.Pages.AdminHomePage
             InitializeComponent();
             this.prodDropMenu.adminPage = this;
             this.userDropMenu.adminPage = this;
+            this.orderDropMenu.adminPage = this;
         }
 
         private void products_MouseEnter(object sender, MouseEventArgs e)
@@ -47,6 +48,14 @@ namespace NatureStore.View.Pages.AdminHomePage
             usersWp.Visibility = Visibility.Hidden;
         }
 
-        
+        private void orderssWp_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ordersWp.Visibility = Visibility.Hidden;
+        }
+
+        private void orders_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ordersWp.Visibility = Visibility.Visible;
+        }
     }
 }

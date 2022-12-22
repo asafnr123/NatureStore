@@ -259,7 +259,7 @@ namespace NatureStore.Controller
                           }).Take(12).ToList();
 
             if (result != null)
-                return result.ToList();
+                return result;
             else
                 return null;
         }
