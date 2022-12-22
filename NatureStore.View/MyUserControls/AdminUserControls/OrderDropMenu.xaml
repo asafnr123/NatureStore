@@ -12,14 +12,12 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Label Name="allOrdersLbl" Style="{StaticResource categoryLabel}" Content="All Orders" Grid.Row="0" Margin="4" FontSize="13" MouseDown="allOrdersLbl_MouseDown" />
         <Label Name="orderByUserLbl" Style="{StaticResource categoryLabel}" Content="User Order" Grid.Row="1" Margin="4" FontSize="13" MouseDown="orderByUserLbl_MouseDown" />
-        <Label Name="orderDetailLbl" Style="{StaticResource categoryLabel}" Content="Order Detail" Grid.Row="2" Margin="4" FontSize="13" />
-        <Label Name="editOrderLbl" Style="{StaticResource categoryLabel}" Content="Edit Order" Grid.Row="3" Margin="4" FontSize="13" />
-        <Label Name="removeOrderLbl" Style="{StaticResource categoryLabel}" Content="Remove Order" Grid.Row="4" Margin="4" FontSize="13" />
+        <Label Name="orderDetailLbl" Style="{StaticResource categoryLabel}" Content="Order Detail" Grid.Row="2" Margin="4" FontSize="13" MouseDown="orderDetailLbl_MouseDown" />
+        <Label Name="removeOrderLbl" Style="{StaticResource categoryLabel}" Content="Remove Order" Grid.Row="3" Margin="4" FontSize="13" MouseDown="removeOrderLbl_MouseDown"/>
 
     </Grid>
 </UserControl>

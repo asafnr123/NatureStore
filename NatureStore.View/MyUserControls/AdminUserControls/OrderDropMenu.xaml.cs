@@ -42,7 +42,23 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
         private void orderByUserLbl_MouseDown(object sender, MouseButtonEventArgs e)
         {
             adminPage.myDataGrid.Visibility = Visibility.Collapsed;
-            adminPage.MainAdminFrame.Navigate(new AdminOrdersPage());
+            adminPage.MainAdminFrame.Navigate(new AdminOrdersPage("OrderByUser"));
+            adminPage.ordersWp.Visibility = Visibility.Hidden;
+            adminPage.MainAdminFrame.Visibility = Visibility.Visible;
+        }
+
+        private void orderDetailLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            adminPage.myDataGrid.Visibility = Visibility.Collapsed;
+            adminPage.MainAdminFrame.Navigate(new AdminOrdersPage("OrderDetails"));
+            adminPage.ordersWp.Visibility = Visibility.Hidden;
+            adminPage.MainAdminFrame.Visibility = Visibility.Visible;
+        }
+
+        private void removeOrderLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            adminPage.myDataGrid.Visibility = Visibility.Collapsed;
+            adminPage.MainAdminFrame.Navigate(new AdminOrdersPage("RemoveOrder"));
             adminPage.ordersWp.Visibility = Visibility.Hidden;
             adminPage.MainAdminFrame.Visibility = Visibility.Visible;
         }

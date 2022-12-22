@@ -56,10 +56,21 @@ namespace NatureStore.Controller
                 return null;
         }
 
-        public List<Order> GetAllOrders()
+        public IEnumerable<object> GetAllOrders()
         {
             var query = (from order in db.Orders
-                    select order).ToList();
+                         join user in db.Users on order.User equals user
+                         orderby order.Id
+                         select new
+                         {
+                             OrderId = order.Id,
+                             Username = user.UserName,
+                             UserId = user.Id,
+                             Address = user.Address,
+                             City = user.City,
+                             Country = user.Country,
+                             OrderDate = order.OrderDate
+                         }).ToList();
             if (query != null)
                 return query;
             else

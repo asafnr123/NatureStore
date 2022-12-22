@@ -1,4 +1,5 @@
-﻿using NatureStore.Controller.Interfaces;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using NatureStore.Controller.Interfaces;
 using NatureStore.Model.Context;
 using NatureStore.Model.Entities;
 using NatureStore.Model.Entitys;
@@ -26,7 +27,7 @@ namespace NatureStore.Controller
             return (from user in db.Users
                          join order in db.Orders on user equals order.User
                          where user.Id == userId
-                         orderby order.Id
+                         orderby order.Id, user.Id
                          select new
                          {
                              orderId = order.Id,
@@ -50,19 +51,49 @@ namespace NatureStore.Controller
                 return false;
         }
 
+        public bool CheckIfOrderExist(int orderId)
+        {
+            var order = db.Orders.FirstOrDefault(o => o.Id == orderId);
+
+            if (order != null)
+                return true;
+            else
+                return false;
+        }
+
         public IEnumerable<object> GetOrderDetails(int orderId)
         {
-            throw new NotImplementedException();
+            return (from order in db.Orders
+                    join details in db.OrderDetails on order equals details.Order
+                    join user in db.Users on order.User equals user
+                    where order.Id == orderId
+                    orderby order.Id
+                    select new
+                    {
+                        OrderId = order.Id,
+                        ProductName = details.Product.Name,
+                        UserId = user.Id,
+                        Quantity = details.Quantity,
+                        OrderDate = order.OrderDate,
+                        OrderValue = details.OrderValue,
+                        TotalValue = order.TotalValue,
+                    }).ToList();
         }
 
         public bool DeleteOrder(int orderId)
         {
-            throw new NotImplementedException();
+            var order = db.Orders.FirstOrDefault(o => o.Id == orderId);
+
+            if (order != null)
+            {
+                db.Orders.Remove(order);
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
-        public bool EditOrder(int orderId)
-        {
-            throw new NotImplementedException();
-        }
+        
 
 
 

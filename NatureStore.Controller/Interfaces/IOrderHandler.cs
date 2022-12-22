@@ -10,7 +10,6 @@ namespace NatureStore.Controller.Interfaces
     {
         IEnumerable<object> GetOrderByUser(int userId);
         IEnumerable<object> GetOrderDetails(int orderId);
-        bool EditOrder(int orderId);    
         bool DeleteOrder(int orderId);
 
     }

@@ -15,8 +15,8 @@
         </Grid.RowDefinitions>
         <Border Name="orderByUserBord" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Grid.Row="0"  Width="300" Height="100" HorizontalAlignment="Center"  Visibility="Visible" >
             <WrapPanel Name="orderByUserWP" Background="DarkGray">
-                <Label Name="userIdLbl" Style="{StaticResource labels}" Content="User Id :" Margin="10"/>
-                <TextBox Name="userIdTxt" Style="{StaticResource userInput }" Width="160" Margin="-70,40,0,0" />
+                <Label Name="IdLbl" Style="{StaticResource labels}" Margin="10"/>
+                <TextBox Name="IdTxt" Style="{StaticResource userInput }" Width="160" Margin="-70,40,0,0" />
 
                 <Button Name="searchBtn" Style="{StaticResource addminNavBtn}" Width="75" Height="23" Content="Search" FontSize="15" Margin="25,40,0,0" Click="searchBtn_Click"/>
             </WrapPanel>

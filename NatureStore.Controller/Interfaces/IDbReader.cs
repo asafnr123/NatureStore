@@ -11,7 +11,7 @@ namespace NatureStore.Controller.Interfaces
     public interface IDbReader
     {
         List<User> GetAllUsers();
-        List<Order> GetAllOrders();
+        IEnumerable<object> GetAllOrders();
         IEnumerable<object> GetAllProducts();
         List<Stock> GetAllStocks();
         List<Category> GetAllCategorys();
