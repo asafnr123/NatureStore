@@ -19,7 +19,6 @@ namespace NatureStore.Controller
         public DbCreator()
         {
             this.db = DbConnector.GetInstance().GetDb();
-            DbReader reader = new();
         }
 
         public bool AddNewCategory(Category category)

@@ -128,6 +128,19 @@ namespace NatureStore.Controller
                 return false;
         }
 
+        public bool RemoveCategory(int id)
+        {
+            var cate = db.Categories.FirstOrDefault(c => c.Id == id);
+            if (cate != null)
+            {
+                db.Categories.Remove(cate);
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
 
 
 

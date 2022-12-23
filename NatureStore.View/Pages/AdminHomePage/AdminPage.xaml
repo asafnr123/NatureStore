@@ -20,24 +20,28 @@
             <Button Name="orders" Style="{StaticResource addminNavBtn}" Content="Orders" MouseEnter="orders_MouseEnter" />
             <Button Name="products" Style="{StaticResource addminNavBtn}" Content="Products" MouseEnter="products_MouseEnter" />
             <Button Name="users" Style="{StaticResource addminNavBtn}" Content="Users" MouseEnter="users_MouseEnter"/>
-            <Button Name="categorys" Style="{StaticResource addminNavBtn}" Content="Categorys" MouseEnter="users_MouseEnter"/>
-            <Button Name="stocks" Style="{StaticResource addminNavBtn}" Content="Stocks" MouseEnter="users_MouseEnter"/>
+            <Button Name="categorys" Style="{StaticResource addminNavBtn}" Content="Categorys" MouseEnter="categorys_MouseEnter"/>
+            <Button Name="stocks" Style="{StaticResource addminNavBtn}" Content="Stocks" />
         </StackPanel>
 
         <WrapPanel Name="ordersWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="7,-9.5,0,0" Width="105" Height="150" MouseLeave="orderssWp_MouseLeave" >
-            <adminMenus:OrderDropMenu x:Name="orderDropMenu" Grid.Row="1"></adminMenus:OrderDropMenu>
+            <adminMenus:OrderDropMenu x:Name="orderDropMenu"></adminMenus:OrderDropMenu>
         </WrapPanel>
 
         <WrapPanel Name="productsWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="126,-9.5,0,0" Width="105" Height="150" MouseLeave="productsWp_MouseLeave">
-            <adminMenus:ProductsDropMenu x:Name="prodDropMenu" Grid.Row="1"></adminMenus:ProductsDropMenu>
+            <adminMenus:ProductsDropMenu x:Name="prodDropMenu"></adminMenus:ProductsDropMenu>
         </WrapPanel>
 
         <WrapPanel Name="usersWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="245,-9.5,0,0" Width="105" Height="150" MouseLeave="userssWp_MouseLeave" > 
-            <adminMenus:UserDropMenu x:Name="userDropMenu" Grid.Row="1"></adminMenus:UserDropMenu>
+            <adminMenus:UserDropMenu x:Name="userDropMenu"></adminMenus:UserDropMenu>
+        </WrapPanel>
+
+        <WrapPanel Name="cateWP" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="364,-9.5,0,0" Width="105" Height="150" MouseLeave="cateWP_MouseLeave" >
+            <adminMenus:CategorysDropMenu x:Name="cateDropMenu"></adminMenus:CategorysDropMenu>
         </WrapPanel>
 
 
         <Frame Name="MainAdminFrame"  Grid.Row="1" Grid.RowSpan="2"></Frame>
-        <DataGrid Name="myDataGrid" Grid.Row="2" IsReadOnly="True" Visibility="Hidden" Background="Transparent" />
+        <DataGrid Name="myDataGrid" Grid.Row="2" Style="{StaticResource dataGrid}" IsReadOnly="True" Visibility="Hidden" Background="Transparent" />
     </Grid>
 </Page>

@@ -64,7 +64,7 @@ namespace NatureStore.View.Pages.AdminHomePage
                 var userType = (ComboBoxItem)userTypeCombox.SelectedItem;
                 if (userType != null)
                 {
-                    if (userType.Content == "User")
+                    if (userType.Content.ToString() == "User")
                         user.UserType = Model.UserType.User;
                     else
                         user.UserType = Model.UserType.Admin;
@@ -103,7 +103,7 @@ namespace NatureStore.View.Pages.AdminHomePage
                     if (result == MessageBoxResult.Yes)
                     {
                         updater.RemoveUser(id);
-                        MessageBox.Show("User Successfully Deleted");
+                        MessageBox.Show("User Successfully Removed");
                     }
                 }
                 else

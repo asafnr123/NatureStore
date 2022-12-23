@@ -22,7 +22,7 @@
             </WrapPanel>
         </Border>
 
-        <DataGrid Name="ordersDg" Grid.Row="1" Background="Transparent" Visibility="Hidden" />
+        <DataGrid Style="{StaticResource dataGrid}" Name="ordersDg" Grid.Row="1" Background="Transparent" Visibility="Hidden" />
 
     </Grid>
 </Page>

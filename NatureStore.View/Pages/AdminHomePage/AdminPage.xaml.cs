@@ -26,15 +26,22 @@ namespace NatureStore.View.Pages.AdminHomePage
             this.prodDropMenu.adminPage = this;
             this.userDropMenu.adminPage = this;
             this.orderDropMenu.adminPage = this;
+            this.cateDropMenu.adminPage = this;
         }
 
         private void products_MouseEnter(object sender, MouseEventArgs e)
         {
+            ordersWp.Visibility = Visibility.Hidden;
+            usersWp.Visibility = Visibility.Hidden;
+            cateWP.Visibility = Visibility.Hidden;
             productsWp.Visibility = Visibility.Visible;
         }
 
         private void users_MouseEnter(object sender, MouseEventArgs e)
         {
+            ordersWp.Visibility = Visibility.Hidden;
+            productsWp.Visibility = Visibility.Hidden;
+            cateWP.Visibility = Visibility.Hidden;
             usersWp.Visibility = Visibility.Visible;
         }
 
@@ -55,7 +62,23 @@ namespace NatureStore.View.Pages.AdminHomePage
 
         private void orders_MouseEnter(object sender, MouseEventArgs e)
         {
+            productsWp.Visibility = Visibility.Hidden;
+            usersWp.Visibility = Visibility.Hidden;
+            cateWP.Visibility = Visibility.Hidden;
             ordersWp.Visibility = Visibility.Visible;
+        }
+
+        private void categorys_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ordersWp.Visibility = Visibility.Hidden;
+            usersWp.Visibility = Visibility.Hidden;
+            productsWp.Visibility = Visibility.Hidden;
+            cateWP.Visibility = Visibility.Visible;
+        }
+
+        private void cateWP_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cateWP.Visibility = Visibility.Hidden;
         }
     }
 }
