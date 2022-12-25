@@ -21,7 +21,7 @@ namespace NatureStore.Model.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Data Source=2a06:c701:4346:6b00:70b8:82a:3435:eab1,1433;Initial Catalog=NatureStoreDb;User ID=anyuser;Password=Ns1213;TrustServerCertificate=True;");
+            builder.UseSqlServer("Server=2a06:c701:4346:6b00:716d:a7ab:e9de:82ea;Database=NatureStoreDb;User Id=anyuser;Password=Ns1213;;TrustServerCertificate=True;");
         }
         
     }
