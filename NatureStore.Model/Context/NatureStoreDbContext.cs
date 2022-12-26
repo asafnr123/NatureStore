@@ -23,8 +23,8 @@ namespace NatureStore.Model.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Data Source=(local);Initial Catalog=NatureStoreDb;User Id=anyuser;Password=Ns1213;;TrustServerCertificate=True;");
-            if(counter == 0)
+            builder.UseSqlServer("Server=(local);Database=NatureStoreDb;Trusted_Connection=True;TrustServerCertificate=True;");
+            if (counter == 0)
             {
                 counter++;
                 CreateDbLocally();
