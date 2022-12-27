@@ -36,7 +36,7 @@ namespace NatureStore.Model.Context
         {
             using (var client = new NatureStoreDbContext())
             {
-                client.Database.EnsureCreated();
+                client.Database.Migrate();
             }
         }
 
