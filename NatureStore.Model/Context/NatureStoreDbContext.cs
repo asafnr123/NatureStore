@@ -12,7 +12,7 @@ namespace NatureStore.Model.Context
 {
     public class NatureStoreDbContext : DbContext
     {
-        private static int counter = 0;
+        private bool dcCreatedCheck;
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Stock> Stocks { get; set; }    
@@ -24,21 +24,15 @@ namespace NatureStore.Model.Context
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseSqlServer("Server=(local);Database=NatureStoreDb;Trusted_Connection=True;TrustServerCertificate=True;");
-            if (counter == 0)
-            {
-                counter++;
-                CreateDbLocally();
-            }
-
+            // dcCreatedCheck =  this.Database.EnsureCreated();
         }
 
-        public void CreateDbLocally()
-        {
-            using (var client = new NatureStoreDbContext())
-            {
-                client.Database.Migrate();
-            }
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+            
+        //}
+
+
 
 
     }
