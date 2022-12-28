@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NatureStore.Model.Entities;
 using NatureStore.Model.Entitys;
+using NatureStore.Model.Group_Configuration;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
@@ -27,10 +28,12 @@ namespace NatureStore.Model.Context
             // dcCreatedCheck =  this.Database.EnsureCreated();
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-            
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            new CategoryEntityConfiguration().Configure(modelBuilder.Entity<Category>());
+            new ProductEntityConfiguration().Configure(modelBuilder.Entity<Product>());
+            new UsersEntityConfiguration().Configure(modelBuilder.Entity<User>());
+        }
 
 
 

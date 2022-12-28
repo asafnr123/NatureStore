@@ -17,6 +17,8 @@ namespace NatureStore.Model.Entitys
         public UserType UserType { get; set; }
 
 
+        public User() { }
+
         public User(string userName, string password, string address, string city, string country)
         {
             UserName = userName;

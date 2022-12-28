@@ -64,14 +64,14 @@ namespace NatureStore.View.Pages.Login
             else if (pageController.ValidatePassword(password.Password) == FormStatus.LengthTooShort)
                 MessageBox.Show("Password Is Too Short");
 
-            else if (pageController.ValidateCountry(country.Text) == FormStatus.LengthTooShort)
-                MessageBox.Show("Country Is Invalid");
+            else if (pageController.ValidateAddress(address.Text) == FormStatus.LengthTooShort)
+                MessageBox.Show("Address Is Invalid");
 
             else if (pageController.ValidateCitry(city.Text) == FormStatus.LengthTooShort)
                 MessageBox.Show("Citry Is Invalid");
 
-            else if (pageController.ValidateAddress(address.Text) == FormStatus.LengthTooShort)
-                MessageBox.Show("Address Is Invalid");
+            else if (pageController.ValidateCountry(country.Text) == FormStatus.LengthTooShort)
+                MessageBox.Show("Country Is Invalid");
 
             else
             {
