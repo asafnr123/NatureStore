@@ -51,18 +51,15 @@ namespace NatureStore.View.Pages.AdminHomePage
             else if (pageHandler.ValidatePassword(password.Password) == FormStatus.LengthTooShort)
                 MessageBox.Show("Password Is Too Short");
 
-            else if (userType != null && userType.Content.ToString() == "User")
-            {
-                if (pageHandler.ValidateAddress(address.Text) == FormStatus.LengthTooShort)
-                    MessageBox.Show("Address Is Invalid");
+            else if (pageHandler.ValidateAddress(address.Text) == FormStatus.LengthTooShort)
+                MessageBox.Show("Address Is Invalid");
 
-                else if (pageHandler.ValidateCitry(city.Text) == FormStatus.LengthTooShort)
-                    MessageBox.Show("Citry Is Invalid");
+            else if (pageHandler.ValidateCitry(city.Text) == FormStatus.LengthTooShort)
+                MessageBox.Show("Citry Is Invalid");
 
-                else if (pageHandler.ValidateCountry(country.Text) == FormStatus.LengthTooShort)
-                    MessageBox.Show("Country Is Invalid");
-            }
-            
+            else if (pageHandler.ValidateCountry(country.Text) == FormStatus.LengthTooShort)
+                MessageBox.Show("Country Is Invalid");
+
             else
             {
                 User user = new User(username.Text, password.Password, address.Text, city.Text, country.Text);
