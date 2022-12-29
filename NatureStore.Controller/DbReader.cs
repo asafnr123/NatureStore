@@ -201,6 +201,7 @@ namespace NatureStore.Controller
         public string GetImagePathByProdName(string prodName)
         {
             var product = db.Products.FirstOrDefault(prod => prod.Name == prodName);
+
             if (product != null)
                 return product.Image;
             else
