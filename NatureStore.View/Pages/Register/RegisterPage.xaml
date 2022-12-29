@@ -8,8 +8,9 @@
       Title="RegisterPage">
 
     <Grid>
-        <Border Style="{StaticResource border}" Width="400" Height="350">
-            <WrapPanel Width="350" Height="350" VerticalAlignment="Center" Margin="0,20,0,0">
+        <Button Name="backBtn" Panel.ZIndex="20" Content="Go Back" Style="{StaticResource loginBtn}" FontSize="12" Height="25" Width="70" Margin="320,0,0,335" Click="backBtn_Click" />
+        <Border Style="{StaticResource border}" Width="400" Height="370">
+            <WrapPanel Width="350" Height="310"  VerticalAlignment="Center">
                 <Label Content="Username:" Style="{StaticResource labels}" Margin="20,20,0,0" />
                 <TextBox Name="username" Style="{StaticResource userInput}" Margin="5,20,0,0"/>
 

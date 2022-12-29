@@ -86,5 +86,10 @@ namespace NatureStore.View.Pages.Login
 
 
         }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
     }
 }

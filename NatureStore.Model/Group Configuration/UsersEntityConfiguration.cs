@@ -17,9 +17,9 @@ namespace NatureStore.Model.Group_Configuration
             builder.HasData(
                 new User
                 {
-                    Id = 25,
-                    UserName = "admin567",
-                    Password = "admin567!",
+                    Id = 1,
+                    UserName = "admin",
+                    Password = "admin123!",
                     Address = "",
                     City = "",
                     Country = "",
