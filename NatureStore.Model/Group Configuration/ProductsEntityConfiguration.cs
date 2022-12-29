@@ -11,33 +11,7 @@ namespace NatureStore.Model.Group_Configuration
         public void Configure(EntityTypeBuilder<Product> builder)
         {
 
-            //Category protein = new Category
-            //{
-            //    Id = 1,
-            //    Name = "Protein",
-            //    Description = "protein shakes"
-            //};
-
-            //Category snacks = new Category
-            //{
-            //    Id = 2,
-            //    Name = "Snacks",
-            //    Description = "protein snacks and healthy snacks"
-            //};
-
-            //Category vitamins = new Category
-            //{
-            //    Id = 3,
-            //    Name = "Vitamins",
-            //    Description = "vitamins pills and some more healthy stuffs",
-            //};
-
-            //Category creatine = new Category
-            //{
-            //    Id = 4,
-            //    Name = "Creatine",
-            //    Description = "Creatine"
-            //};
+           
 
             builder.HasData(
                 new Product
