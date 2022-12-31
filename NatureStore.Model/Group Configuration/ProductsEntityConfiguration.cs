@@ -34,7 +34,7 @@ namespace NatureStore.Model.Group_Configuration
                     Price = 89.76f,
                     Description = "MusclePharm, Combat 100% Whey Protein, Strawberry, 25G Protein, 5 lbs (2,269 g)",
                     Brand = "MusclePharm",
-                    Image = $@"{projectPath}" + @"Pages\ProductsDropMenu\Pictures\Protein2.jpg"
+                    Image = $@"{projectPath}" + @"\Pages\ProductsDropMenu\Pictures\Protein2.jpg"
                 },
 
                 new Product
