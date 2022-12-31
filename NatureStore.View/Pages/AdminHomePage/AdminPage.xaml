@@ -40,6 +40,10 @@
             <adminMenus:CategorysDropMenu x:Name="cateDropMenu"></adminMenus:CategorysDropMenu>
         </WrapPanel>
 
+        <WrapPanel Name="stocksWP" Panel.ZIndex="20" Visibility="Visible" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="483,-9.5,0,0" Width="105" Height="150" MouseLeave="cateWP_MouseLeave" >
+            
+        </WrapPanel>
+
 
         <Frame Name="MainAdminFrame"  Grid.Row="1" Grid.RowSpan="2"></Frame>
         <DataGrid Name="myDataGrid" Grid.Row="2" Style="{StaticResource dataGrid}" IsReadOnly="True" Visibility="Hidden" Background="Transparent" />
