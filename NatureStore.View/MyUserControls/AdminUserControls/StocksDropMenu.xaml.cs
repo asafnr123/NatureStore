@@ -30,7 +30,7 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
         public AdminPage adminPage { private get; set; }
         private readonly DbReader reader = new();
 
-        private void allCateLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        private void allStocks_MouseDown(object sender, MouseButtonEventArgs e)
         {
             adminPage.myDataGrid.ItemsSource = null;
             adminPage.myDataGrid.ItemsSource ??= reader.GetAllStocks();
@@ -39,12 +39,14 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
             adminPage.myDataGrid.Visibility = Visibility.Visible;
         }
 
-        private void Add_MouseDown(object sender, MouseButtonEventArgs e)
+        private void newStock_MouseDown(object sender, MouseButtonEventArgs e)
         {
             adminPage.myDataGrid.Visibility = Visibility.Collapsed;
-            adminPage.MainAdminFrame.Navigate(null);
+            adminPage.MainAdminFrame.Navigate(new AddNewStockPage());
             adminPage.stocksWP.Visibility = Visibility.Hidden;
             adminPage.MainAdminFrame.Visibility = Visibility.Visible;
         }
+
+       
     }
 }

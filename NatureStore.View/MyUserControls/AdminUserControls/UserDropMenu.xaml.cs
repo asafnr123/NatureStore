@@ -59,5 +59,7 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
             adminPage.usersWp.Visibility = Visibility.Hidden;
             adminPage.MainAdminFrame.Visibility = Visibility.Visible;
         }
+
+    
     }
 }

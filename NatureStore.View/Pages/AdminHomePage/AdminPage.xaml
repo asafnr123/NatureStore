@@ -21,7 +21,7 @@
             <Button Name="products" Style="{StaticResource addminNavBtn}" Content="Products" MouseEnter="products_MouseEnter" />
             <Button Name="users" Style="{StaticResource addminNavBtn}" Content="Users" MouseEnter="users_MouseEnter"/>
             <Button Name="categorys" Style="{StaticResource addminNavBtn}" Content="Categorys" MouseEnter="categorys_MouseEnter"/>
-            <Button Name="stocks" Style="{StaticResource addminNavBtn}" Content="Stocks" />
+            <Button Name="stocks" Style="{StaticResource addminNavBtn}" Content="Stocks" MouseEnter="stocks_MouseEnter"/>
         </StackPanel>
 
         <WrapPanel Name="ordersWp" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="7,-9.5,0,0" Width="105" Height="150" MouseLeave="orderssWp_MouseLeave" >
@@ -40,8 +40,8 @@
             <adminMenus:CategorysDropMenu x:Name="cateDropMenu"></adminMenus:CategorysDropMenu>
         </WrapPanel>
 
-        <WrapPanel Name="stocksWP" Panel.ZIndex="20" Visibility="Visible" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="483,-9.5,0,0" Width="105" Height="150" MouseLeave="cateWP_MouseLeave" >
-            
+        <WrapPanel Name="stocksWP" Panel.ZIndex="20" Grid.Row="1" Style="{StaticResource productsWpStyle}" Margin="483,-9.5,0,0" Width="105" Height="150" MouseLeave="stocksWP_MouseLeave" >
+            <adminMenus:StocksDropMenu x:Name="stocksDropMenu"></adminMenus:StocksDropMenu>
         </WrapPanel>
 
 

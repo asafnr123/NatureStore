@@ -59,5 +59,17 @@ namespace NatureStore.Controller
             else
                 return false;
         }
+
+        public bool AddNewStock(Stock stock)
+        {
+            if (stock != null)
+            {
+                db.Stocks.Add(stock);
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }
