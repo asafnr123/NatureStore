@@ -49,13 +49,24 @@ namespace NatureStore.Controller
         public bool SubmitNewStock(string prodId, string quantity)
         {
             var product = reader.GetProductById(int.Parse(prodId));
-            var quant = int.Parse(quantity);
+            var allstocks = reader.GetAllStockProducts();
 
-            var newStock = new Stock();
-            newStock.Product = product; 
-            newStock.Quantity = quant;
+            if (allstocks.Contains(product))
+                return false;
+            else
+            {
+                var quant = int.Parse(quantity);
+                var newStock = new Stock();
+                newStock.Product = product;
+                newStock.Quantity = quant;
+                return creator.AddNewStock(newStock);
+            }
 
-            return creator.AddNewStock(newStock);
+            
+            
+
+            
+
         }
 
     }

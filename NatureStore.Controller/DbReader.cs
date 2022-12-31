@@ -117,6 +117,17 @@ namespace NatureStore.Controller
                     
         }
 
+        public IEnumerable<object> GetAllStockProducts()
+        {
+            var query = from stock in db.Stocks
+                        select stock.Product;
+
+            if (query != null)
+                return query;
+            else
+                return null;
+        }
+
         public List<User> GetAllUsers()
         {
             var query = (from user in db.Users

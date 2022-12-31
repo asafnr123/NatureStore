@@ -41,7 +41,7 @@ namespace NatureStore.View.Pages.AdminHomePage
                 if (pageHandler.SubmitNewStock(prodIdTxt.Text, quantTxt.Text))
                     MessageBox.Show("Successfully Added Stock");
                 else
-                    MessageBox.Show("Something Went Wrong");
+                    MessageBox.Show("Product Id Already In Stock");
             }
 
         }
