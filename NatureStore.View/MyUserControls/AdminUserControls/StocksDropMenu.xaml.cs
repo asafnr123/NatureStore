@@ -35,7 +35,7 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
             adminPage.myDataGrid.ItemsSource = null;
             adminPage.myDataGrid.ItemsSource ??= reader.GetAllStocks();
             adminPage.MainAdminFrame.Visibility = Visibility.Hidden;
-            adminPage.stocks.Visibility = Visibility.Hidden;
+            adminPage.stocksWP.Visibility = Visibility.Hidden;
             adminPage.myDataGrid.Visibility = Visibility.Visible;
         }
 

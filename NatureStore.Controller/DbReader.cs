@@ -98,14 +98,23 @@ namespace NatureStore.Controller
                 return null;
         }
 
-        public List<Stock> GetAllStocks()
+        public IEnumerable<object> GetAllStocks()
         {
             var query = (from stock in db.Stocks
-                    select stock).ToList();
+                        join prod in db.Products on stock.Product equals prod
+                        select new
+                        {
+                            Id = stock.Id,
+                            ProductName = prod.Name,
+                            ProductId = prod.Id,
+                            Quantity = stock.Quantity
+                        }).ToList();
+
             if (query != null)
                 return query;
             else
                 return null;
+                    
         }
 
         public List<User> GetAllUsers()
