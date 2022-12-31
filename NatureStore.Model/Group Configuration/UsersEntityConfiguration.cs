@@ -19,7 +19,7 @@ namespace NatureStore.Model.Group_Configuration
                 {
                     Id = 1,
                     UserName = "admin",
-                    Password = "admin2022!",
+                    Password = "Admin1213!",
                     Address = "",
                     City = "",
                     Country = "",
