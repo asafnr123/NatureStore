@@ -1,17 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NatureStore.Controller.Enums;
+﻿using NatureStore.Controller.Enums;
 using NatureStore.Controller.Interfaces;
-using NatureStore.Model;
 using NatureStore.Model.Context;
 using NatureStore.Model.Entitys;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Net;
-using System.Text;
+
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 
 namespace NatureStore.Controller
 {
