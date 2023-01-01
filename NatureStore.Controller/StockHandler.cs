@@ -13,16 +13,17 @@ namespace NatureStore.Controller
         private readonly NatureStoreDbContext db;
         private readonly DbReader reader = new();
         private readonly DbCreator creator = new();
+        private readonly DbUpdater updater = new();
 
         public StockHandler()
         {
             this.db = DbConnector.GetInstance().GetDb();
         }
 
-        public bool CheckProductId(string idString)
+        public bool CheckProductId(string prodId)
         {
             int id;
-            if (int.TryParse(idString, out id))
+            if (int.TryParse(prodId, out id))
             {
                 var query = from prod in db.Products
                             select prod.Id;
@@ -61,12 +62,23 @@ namespace NatureStore.Controller
                 newStock.Quantity = quant;
                 return creator.AddNewStock(newStock);
             }
+        }
 
-            
-            
+        public bool ChangeQtyInStock(string prodId, string quantity)
+        {
+            var productInStock = reader.GetProductById(int.Parse(prodId));
 
-            
+            if (updater.UpdateProductQtyInStock(productInStock, int.Parse(quantity)))
+                return true;
+            else
+                return false;
+        }
 
+        public bool RemoveStock(string prodId)
+        {
+            var productInStock = reader.GetProductById(int.Parse(prodId));
+
+            return updater.RemoveStockByProduct(productInStock);
         }
 
     }

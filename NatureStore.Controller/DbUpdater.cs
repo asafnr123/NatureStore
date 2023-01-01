@@ -1,5 +1,6 @@
 ﻿using NatureStore.Controller.Interfaces;
 using NatureStore.Model.Context;
+using NatureStore.Model.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -134,6 +135,34 @@ namespace NatureStore.Controller
             if (cate != null)
             {
                 db.Categories.Remove(cate);
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
+
+        public bool UpdateProductQtyInStock(Product prod, int newQty)
+        {
+            var stock = db.Stocks.FirstOrDefault(s => s.Product == prod);
+
+            if (stock != null)
+            {
+                stock.Quantity = newQty;
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool RemoveStockByProduct(Product prod)
+        {
+            var stock = db.Stocks.FirstOrDefault(s => s.Product == prod);
+            if (stock != null)
+            {
+                db.Stocks.Remove(stock);
                 db.SaveChanges();
                 return true;
             }

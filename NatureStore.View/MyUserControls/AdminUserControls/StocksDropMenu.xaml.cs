@@ -47,6 +47,12 @@ namespace NatureStore.View.MyUserControls.AdminUserControls
             adminPage.MainAdminFrame.Visibility = Visibility.Visible;
         }
 
-       
+        private void editStock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            adminPage.myDataGrid.Visibility = Visibility.Collapsed;
+            adminPage.MainAdminFrame.Navigate(new EditStockPage());
+            adminPage.stocksWP.Visibility = Visibility.Hidden;
+            adminPage.MainAdminFrame.Visibility = Visibility.Visible;
+        }
     }
 }
