@@ -1,10 +1,7 @@
 ﻿using NatureStore.Model.Entitys;
-using NatureStore.View.Pages.Login;
 using NatureStore.View.Pages.UserHomePage;
 using NatureStore.View.Pages.UserOrders;
 using NatureStore.View.Pages.UserProfilePage;
-using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
