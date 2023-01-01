@@ -1,5 +1,6 @@
 ﻿using NatureStore.Controller;
 using NatureStore.Model.Entitys;
+using NatureStore.View.Pages.AboutAndContact;
 using NatureStore.View.Pages.UserCart;
 using System.Windows;
 using System.Windows.Controls;
@@ -61,6 +62,17 @@ namespace NatureStore.View.Pages.UserHomePage
         private void Products_MouseEnter(object sender, MouseEventArgs e)
         {
             ProducstWP.Visibility = Visibility.Visible;
+        }
+
+        private void about_Clicked(object sender, MouseButtonEventArgs e)
+        {
+            this.HomeFrame.Navigate(new AboutPage());
+        }
+
+        private void contact_Clicked(object sender, MouseButtonEventArgs e)
+        {
+            this.HomeFrame.Navigate(new ContactPage());
+
         }
     }
 }

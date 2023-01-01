@@ -1,0 +1,29 @@
+﻿<Page x:Class="NatureStore.View.Pages.AboutAndContact.ContactPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NatureStore.View.Pages.AboutAndContact"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ContactPage">
+
+    <Grid >
+        <Label Content="Contact Us :" Style="{StaticResource header}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15" FontSize="22"/>
+        <WrapPanel Width="350" Height="300" HorizontalAlignment="Left" Margin="10,10,10,80">
+            <TextBlock  FontFamily="Bahnschrift" FontSize="19" TextWrapping="Wrap" Padding="20">
+                • You can contact us in all of the social medias by ' The Nature Sore ' <LineBreak/> <LineBreak/>
+                • You can contact us by mail:<LineBreak/>
+                TheNatureStore@gmail.com <LineBreak/> <LineBreak/>
+                • Or you can just call us at: <LineBreak />
+                305-468-6183 <LineBreak/> <LineBreak/>
+                If you can't reach us you can leave  a mail and we will contact you ASAP <LineBreak/>
+                Thank you for understanding.
+            </TextBlock>
+        </WrapPanel>
+        
+
+        
+    </Grid>
+
+</Page>

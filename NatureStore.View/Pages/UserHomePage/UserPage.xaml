@@ -17,8 +17,8 @@
         <WrapPanel Grid.Row="0" VerticalAlignment="Top" Background="#FF2A507D" Height="60">
             <Path Name="HouseIcon" Width="40" Height="35" Margin="5" Data="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Style="{StaticResource icon}" MouseDown="HouseIcon_Clicked" />
             <Label Content="Products" Style="{StaticResource homePageOption}" Padding="13,0,0,0" MouseEnter="Products_MouseEnter" />
-            <Label Content="About" Style="{StaticResource homePageOption}" Padding="23,0,0,0" />
-            <Label Content="Contact" Style="{StaticResource homePageOption}" Padding="18,0,0,0" />
+            <Label Content="About" Style="{StaticResource homePageOption}" Padding="23,0,0,0" MouseDown="about_Clicked"/>
+            <Label Content="Contact" Style="{StaticResource homePageOption}" Padding="18,0,0,0" MouseDown="contact_Clicked" />
 
             <Path Name="cart" Style="{StaticResource icon}" MouseDown="Cart_MouseDown" Margin="290,0,0,0" Width="30" Height="30" Data="M19 20C19 21.11 18.11 22 17 22C15.89 22 15 21.1 15 20C15 18.89 15.89 18 17 18C18.11 18 19 18.9 19 20M7 18C5.89 18 5 18.89 5 20C5 21.1 5.89 22 7 22C8.11 22 9 21.11 9 20S8.11 18 7 18M7.2 14.63L7.17 14.75C7.17 14.89 7.28 15 7.42 15H19V17H7C5.89 17 5 16.1 5 15C5 14.65 5.09 14.32 5.24 14.04L6.6 11.59L3 4H1V2H4.27L5.21 4H20C20.55 4 21 4.45 21 5C21 5.17 20.95 5.34 20.88 5.5L17.3 11.97C16.96 12.58 16.3 13 15.55 13H8.1L7.2 14.63M8.5 11H10V9H7.56L8.5 11M11 9V11H14V9H11M14 8V6H11V8H14M17.11 9H15V11H16L17.11 9M18.78 6H15V8H17.67L18.78 6M6.14 6L7.08 8H10V6H6.14Z" />
             <Path Width="25" Name="UserIcon" Height="25" MouseEnter="UserIcon_MouseEnter" Margin="10,0,0,0" Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" Style="{StaticResource icon}" />
